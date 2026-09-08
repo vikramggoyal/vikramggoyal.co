@@ -1,0 +1,11 @@
+# Preface {.unnumbered}
+
+This is the preface. One source renders to HTML (with a sidebar TOC and search),
+PDF, and EPUB, with download buttons on the HTML version.
+
+Code cells work here exactly as in posts:
+
+```{python}
+#| echo: true
+print("Hello from the book build.")
+```

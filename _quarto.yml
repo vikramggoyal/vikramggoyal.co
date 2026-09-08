@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - CNAME          # copied into _site so it lands on the gh-pages branch
+  render:
+    - "*.qmd"        # index, about, blog
+    - "posts/"
+    - "links/"
+    - "!book/"       # the book is its own project; built + deployed separately (see notes)
+
+website:
+  title: "Vikram G Goyal"
+  description: "Deterministic expectations in a Stochastic life"
+  site-url: https://vikramggoyal.co
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: blog.qmd
+        text: Blog
+      - text: Links
+        menu:
+          - href: links/youtube.qmd
+            text: YouTube
+          - href: links/reading.qmd
+            text: Reading
+    right:
+      - icon: github
+        href: https://github.com/vikramggoyal
+        aria-label: GitHub
+      - icon: rss
+        href: blog.xml
+        aria-label: RSS
+  page-footer:
+    center: "© 2026 Vikram Goyal · Built with Quarto"
+
+format:
+  html:
+    theme:
+      - flatly
+      - styles/custom.scss
+    css: styles/print.css        # @media print rules; harmless on screen
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true

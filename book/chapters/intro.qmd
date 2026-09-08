@@ -1,0 +1,10 @@
+# Introduction
+
+The first numbered chapter. Cross-references work across chapters, e.g. a labelled
+equation:
+
+$$
+\ddot{a}_{x:\overline{n}|} = \sum_{t=0}^{n-1} v^{t}\, {}_{t}p_{x}
+$$ {#eq-annuity}
+
+referenced as @eq-annuity.

@@ -1,0 +1,24 @@
+---
+title: "About"
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/vikramggoyal
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/vikramggoyal   # edit to taste
+---
+
+<!-- Add a photo at styles/profile.jpg and reference it above with `image: styles/profile.jpg`. -->
+
+Part-qualified actuary (IFoA) and software engineer. I work on finance and
+actuarial transformation for life insurers — data platforms, actuarial systems
+modernization, and statutory/IFRS 17 reporting automation.
+
+This site is where I think out loud: short technical posts, interactive actuarial
+models, and a longer-form book.
+
+*(Placeholder bio — replace this block with your own.)*

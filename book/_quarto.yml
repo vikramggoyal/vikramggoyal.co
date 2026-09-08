@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: _book        # standalone default; see note in chat for publishing WITH the site
+
+book:
+  title: "The Book"                       # rename
+  subtitle: "A longer-form project"        # rename or remove
+  author: "Vikram Goyal"
+  date: today
+  chapters:
+    - index.qmd
+    - chapters/intro.qmd
+  downloads: [pdf, epub]                   # renders download buttons in the HTML book
+  search: true
+
+format:
+  html:
+    theme:
+      - flatly
+      - ../styles/custom.scss
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+  epub:
+    toc: true

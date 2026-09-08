@@ -1,0 +1,21 @@
+---
+title: "YouTube"
+description: "Videos worth your time."
+---
+
+An annotated, curated list. Embeds use Quarto's native `{{{< video >}}}`
+shortcode — no custom iframe HTML needed.
+
+## Actuarial / modelling
+
+{{< video https://www.youtube.com/embed/aircAruvnKk >}}
+
+**3Blue1Brown — But what is a neural network?**
+Placeholder entry. Replace the URL and description with your pick.
+
+## Engineering / data
+
+{{< video https://www.youtube.com/embed/8aGhZQkoFbQ >}}
+
+**What the heck is the event loop anyway?**
+Placeholder entry. One or two lines on why it's worth watching.

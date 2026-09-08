@@ -1,0 +1,5 @@
+```{=html}
+<button class="print-button no-print" onclick="window.print()" title="Print / Save as PDF">
+  &#128424;&#65038; Print this post
+</button>
+```

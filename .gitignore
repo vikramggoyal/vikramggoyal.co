@@ -1,0 +1,14 @@
+# Build output
+/_site/
+/book/_book/
+/.quarto/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# Do NOT ignore /_freeze/ — commit it so posts don't re-execute on every build.
+
+**/*.quarto_ipynb

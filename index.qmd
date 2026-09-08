@@ -1,0 +1,30 @@
+---
+title: "Vikram G Goyal"
+subtitle: "Deterministic expectations in a Stochastic life"
+page-layout: full
+---
+
+I build finance and actuarial systems for life insurers, and write here about the
+places where software engineering, actuarial modelling, and data platforms meet.
+
+Some of that writing is interactive: models you can poke at in the browser rather
+than read about.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### [Blog →](blog.qmd)
+Posts, most with runnable or interactive Python.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### [Links →](links/reading.qmd)
+Reading and videos worth your time.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### [About →](about.qmd)
+Who I am and what I work on.
+:::
+
+:::

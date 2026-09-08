@@ -1,0 +1,19 @@
+---
+title: "Reading"
+description: "Books and articles worth your time."
+---
+
+A running, annotated list. Each entry is a linked title and a one- or two-line note
+on why it's here.
+
+### Books
+
+- [**Designing Data-Intensive Applications** — Martin Kleppmann](https://dataintensive.net)
+  The reference for how storage, replication, and consistency actually behave.
+  *(Placeholder — replace.)*
+
+### Articles
+
+- [**A Philosophy of Software Design (talk notes)**](https://web.stanford.edu/~ouster/cgi-bin/book.php)
+  On deep modules and pushing complexity downward.
+  *(Placeholder — replace.)*

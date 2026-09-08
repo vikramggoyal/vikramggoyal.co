@@ -1,0 +1,4 @@
+# Applies to every post under posts/
+freeze: auto            # re-execute a post's Python only when its source changes
+title-block-banner: true
+toc: true
