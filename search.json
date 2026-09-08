@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "posts/2026-cashflow-demo/index.html",
+    "href": "posts/2026-cashflow-demo/index.html",
+    "title": "Poking at a level-premium cashflow",
+    "section": "",
+    "text": "🖨︎ Print this post\n\nA toy but not-embarrassing projection: expected cashflows for a single-life, level-premium term policy. Everything runs at build time — the chart below is static Plotly HTML baked into the page, so there’s no runtime and it stays on free static hosting. (When a reader actually needs to change inputs and re-run, that’s when Quarto Live / Shinylive earn their weight — not here.)\nThe mortality basis is a Gompertz law, purely so the post is self-contained; swap in a real table when you want.\n\nimport numpy as np\nimport pandas as pd\nimport plotly.graph_objects as go\n\n# --- Assumptions -----------------------------------------------------------\nissue_age   = 45\nterm        = 20          # years\nsum_assured = 250_000\ni           = 0.04        # valuation rate\n# Gompertz mu(x) = B c^x, chosen to give sensible adult mortality\nB, c        = 3.0e-5, 1.09\n\n# --- Survival / mortality --------------------------------------------------\nages = issue_age + np.arange(term)\n# integrate mu over each policy year for a one-year death probability\ndef qx(age):\n    # ∫ B c^s ds from age to age+1  =  B (c^{age+1} - c^{age}) / ln c\n    Hx = B * (c**(age + 1) - c**age) / np.log(c)\n    return 1 - np.exp(-Hx)\n\nq = np.array([qx(a) for a in ages])\np = 1 - q\ntpx = np.concatenate(([1.0], np.cumprod(p)))[:term]   # prob in force at start of yr\n\n# --- Level net premium (equivalence principle) ----------------------------\nv = 1 / (1 + i)\ndisc_start = v ** np.arange(term)          # discount to start of each year\ndisc_end   = v ** (np.arange(term) + 1)\n\napv_benefits = np.sum(sum_assured * tpx * q * disc_end)      # death benefit APV\nannuity_due  = np.sum(tpx * disc_start)                      # ä for premiums\nnet_premium  = apv_benefits / annuity_due\n\n# --- Expected cashflows per year -------------------------------------------\nprem_in   = net_premium * tpx                 # collected while in force\nclaims_out = sum_assured * tpx * q            # expected death outgo\nnet_cf     = prem_in - claims_out\n\ndf = pd.DataFrame({\n    \"policy_year\": np.arange(1, term + 1),\n    \"premium_in\": prem_in,\n    \"claims_out\": claims_out,\n    \"net_cashflow\": net_cf,\n})\n\nNet level premium comes out at 824 per year for a 250,000 benefit.\n\nfig = go.Figure()\nfig.add_bar(x=df.policy_year, y=df.premium_in,  name=\"Premium in\")\nfig.add_bar(x=df.policy_year, y=-df.claims_out, name=\"Claims out\")\nfig.add_scatter(x=df.policy_year, y=df.net_cashflow, name=\"Net cashflow\",\n                mode=\"lines+markers\", line=dict(width=3))\n\nfig.update_layout(\n    barmode=\"relative\",\n    template=\"plotly_white\",\n    xaxis_title=\"Policy year\",\n    yaxis_title=\"Expected cashflow\",\n    legend=dict(orientation=\"h\", y=1.12),\n    margin=dict(l=40, r=20, t=30, b=40),\n    height=430,\n)\nfig.show()\n\n\n\n                                                \n\n\nFigure 1: Expected annual cashflows (hover for values, toggle series in the legend).\n\n\n\n\nThe net cashflow is positive early (premiums outrun expected claims while mortality is light) and turns down as the insured ages — the usual shape, and the reason the early-duration surplus has to be reserved rather than spent.\n\ndf.head().style.format({\n    \"premium_in\": \"{:,.0f}\", \"claims_out\": \"{:,.0f}\", \"net_cashflow\": \"{:,.0f}\"\n}).hide(axis=\"index\")\n\n\n\nTable 1: First five policy years.\n\n\n\n\n\n\n\n\npolicy_year\npremium_in\nclaims_out\nnet_cashflow\n\n\n\n\n1\n824\n378\n446\n\n\n2\n823\n412\n411\n\n\n3\n822\n448\n374\n\n\n4\n820\n487\n333\n\n\n5\n819\n530\n289"
+  },
+  {
+    "objectID": "links/reading.html",
+    "href": "links/reading.html",
+    "title": "Reading",
+    "section": "",
+    "text": "A running, annotated list. Each entry is a linked title and a one- or two-line note on why it’s here.\n\nBooks\n\nDesigning Data-Intensive Applications — Martin Kleppmann The reference for how storage, replication, and consistency actually behave. (Placeholder — replace.)\n\n\n\nArticles\n\nA Philosophy of Software Design (talk notes) On deep modules and pushing complexity downward. (Placeholder — replace.)"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Poking at a level-premium cashflow\n\n\n\nactuarial\n\npython\n\ninteractive\n\n\n\nA build-time, interactive Plotly view of expected cashflows for a simplified level-premium term policy.\n\n\n\n\n\nJan 15, 2026\n\n3 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Part-qualified actuary (IFoA) and software engineer. I work on finance and actuarial transformation for life insurers — data platforms, actuarial systems modernization, and statutory/IFRS 17 reporting automation.\nThis site is where I think out loud: short technical posts, interactive actuarial models, and a longer-form book.\n(Placeholder bio — replace this block with your own.)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vikram G Goyal",
+    "section": "",
+    "text": "I build finance and actuarial systems for life insurers, and write here about the places where software engineering, actuarial modelling, and data platforms meet.\nSome of that writing is interactive: models you can poke at in the browser rather than read about.\n\n\nBlog →\nPosts, most with runnable or interactive Python.\n\n\nLinks →\nReading and videos worth your time.\n\n\nAbout →\nWho I am and what I work on."
+  },
+  {
+    "objectID": "links/youtube.html",
+    "href": "links/youtube.html",
+    "title": "YouTube",
+    "section": "",
+    "text": "An annotated, curated list. Embeds use Quarto’s native {{&lt; video &gt;}} shortcode — no custom iframe HTML needed."
+  },
+  {
+    "objectID": "links/youtube.html#actuarial-modelling",
+    "href": "links/youtube.html#actuarial-modelling",
+    "title": "YouTube",
+    "section": "Actuarial / modelling",
+    "text": "Actuarial / modelling\n\n3Blue1Brown — But what is a neural network? Placeholder entry. Replace the URL and description with your pick."
+  },
+  {
+    "objectID": "links/youtube.html#engineering-data",
+    "href": "links/youtube.html#engineering-data",
+    "title": "YouTube",
+    "section": "Engineering / data",
+    "text": "Engineering / data\n\nWhat the heck is the event loop anyway? Placeholder entry. One or two lines on why it’s worth watching."
+  }
+]
