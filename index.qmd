@@ -1,14 +1,16 @@
 ---
-title: "Vikram G Goyal"
+title: "Vikram Goyal"
 subtitle: "Deterministic expectations in a Stochastic life"
 page-layout: full
 ---
 
-I build finance and actuarial systems for life insurers, and write here about the
-places where software engineering, actuarial modelling, and data platforms meet.
+By trade, I lead the teams that build finance and actuarial systems for life insurers — the software, models, and data platforms that sit where engineering, mathematics, and money meet.
 
-Some of that writing is interactive: models you can poke at in the browser rather
-than read about.
+Here I follow the questions my day job doesn't have room for. I'm curious about far more than my job title admits: quantum computing, quantitative finance, AI, biology, and physics, and the compounding ways advances in each ripple out into ordinary human life. What ties it together isn't a subject — it's a habit of mind: looking for the order hidden in complicated things, and staying honest about what stays genuinely uncertain.
+
+A lot of what I write is really just me thinking out loud — trying to find the simple structure underneath something complicated, and to explain it in a way that would satisfy me. Some of it is about the technology and the mathematics; some is about the harder problem of actually building these things inside large organisations, and leading the people who do. And where a model makes the point better than prose, I'd rather you poke at it in the browser than take my word for it.
+
+Deterministic expectations in a stochastic life — the thread through all of it.
 
 ::: {.grid}
 

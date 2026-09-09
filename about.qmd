@@ -9,16 +9,15 @@ about:
       href: https://github.com/vikramggoyal
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/vikramggoyal   # edit to taste
+      href: https://www.linkedin.com/in/goyalvikram/
 ---
 
 <!-- Add a photo at styles/profile.jpg and reference it above with `image: styles/profile.jpg`. -->
 
-Part-qualified actuary (IFoA) and software engineer. I work on finance and
-actuarial transformation for life insurers — data platforms, actuarial systems
-modernization, and statutory/IFRS 17 reporting automation.
+I'm an actuary and software engineer with fifteen years modernizing how life & annuity insurers run their finance, actuarial, and capital operations across the US, Asia-Pacific, and the Middle East. I turn fragmented, manual processes into governed, scalable platforms that lower cost, strengthen controls, and give leadership faster, auditable numbers to act on.
 
-This site is where I think out loud: short technical posts, interactive actuarial
-models, and a longer-form book.
+Most recently I directed a greenfield build of the core Finance & Actuarial platforms — implementing automated, governed systems that replaced manual processes and delivered multi-million-dollar annual savings. I led the F&A technology transition that enabled a major reinsurance capital-release program, and today I own the AI strategy for Finance & Actuarial.
 
-*(Placeholder bio — replace this block with your own.)*
+I've spent my career across two disciplines that rarely sit together — actuarial modeling of liabilities, valuation, and capital, and the engineering that turns those models, and the data they depend on, into production systems. I am now bringing AI into that same regulated, high-stakes core. I don't hand over a deck and walk away; I own the operating model and live with the outcome. Connecting actuarial judgment, capital reporting, and delivery into one plan people can trust is where I do my best work — the perspective I brought to the keynote stage at Insurance Innovators in Nashville (2025).
+
+I'm drawn to problems where insurance, capital, and technology meet — carriers and reinsurers modernizing their core, teams building the next generation of insurance and InsurTech platforms, and the investors and technologists backing them. Always open to a good conversation.
