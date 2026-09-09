@@ -1,0 +1,32 @@
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="post-toolbar no-print" role="group" aria-label="Post actions">
+  <button type="button" class="post-toolbar__btn" data-action="share" title="Share">
+    <i class="bi bi-share" aria-hidden="true"></i><span>Share</span>
+  </button>
+  <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
+    <i class="bi bi-printer" aria-hidden="true"></i><span>Print</span>
+  </button>
+  <a class="post-toolbar__btn" data-action="pdf" href="index.pdf" download title="Download as PDF">
+    <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i><span>Download</span>
+  </a>
+</div>
+<script>
+(function () {
+  var bar = document.querySelector('.post-toolbar');
+  if (!bar) return;
+  var shareBtn = bar.querySelector('[data-action="share"]');
+  if (shareBtn) shareBtn.addEventListener('click', function () {
+    var data = { title: document.title, url: location.href };
+    if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(location.href).then(function () {
+        var s = shareBtn.querySelector('span'), prev = s.textContent;
+        s.textContent = 'Copied'; setTimeout(function () { s.textContent = prev; }, 1500);
+      }).catch(function () {});
+    }
+  });
+})();
+</script>
+```
+:::

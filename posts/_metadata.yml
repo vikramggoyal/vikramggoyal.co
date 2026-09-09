@@ -2,3 +2,7 @@
 freeze: auto            # re-execute a post's Python only when its source changes
 title-block-banner: true
 toc: true
+format:
+  html: default
+  typst: default        # build-time PDF via Typst (bundled with Quarto — no LaTeX in the Action)
+format-links: false     # we surface the PDF via the toolbar button, not Quarto's auto "Other Formats" list
