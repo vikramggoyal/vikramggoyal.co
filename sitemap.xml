@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vikramggoyal.co/posts/2026-cashflow-demo/index.html</loc>
-    <lastmod>2026-09-08T15:46:54.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vikramggoyal.co/links/reading.html</loc>
-    <lastmod>2026-09-08T15:46:54.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vikramggoyal.co/blog.html</loc>
-    <lastmod>2026-09-08T15:46:54.451Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vikramggoyal.co/about.html</loc>
-    <lastmod>2026-09-08T15:46:54.451Z</lastmod>
+    <loc>https://vikramggoyal.co/links/youtube.html</loc>
+    <lastmod>2026-09-09T13:52:02.217Z</lastmod>
   </url>
   <url>
     <loc>https://vikramggoyal.co/index.html</loc>
-    <lastmod>2026-09-08T15:46:54.452Z</lastmod>
+    <lastmod>2026-09-09T13:52:02.217Z</lastmod>
   </url>
   <url>
-    <loc>https://vikramggoyal.co/links/youtube.html</loc>
-    <lastmod>2026-09-08T15:46:54.452Z</lastmod>
+    <loc>https://vikramggoyal.co/about.html</loc>
+    <lastmod>2026-09-09T13:52:02.217Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vikramggoyal.co/blog.html</loc>
+    <lastmod>2026-09-09T13:52:02.217Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vikramggoyal.co/links/reading.html</loc>
+    <lastmod>2026-09-09T13:52:02.217Z</lastmod>
   </url>
 </urlset>
