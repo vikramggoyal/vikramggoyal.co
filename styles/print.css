@@ -9,7 +9,7 @@
   .nav-footer,
   footer.footer,
   .quarto-title-banner,
-  .print-button,
+  .post-toolbar,
   .no-print {
     display: none !important;
   }
