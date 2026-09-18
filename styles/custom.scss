@@ -1,19 +1,17 @@
 /*-- scss:defaults --*/
-// Light touch over Flatly. Uncomment to nudge the palette.
-// $primary: #2c3e50;
+// Light touch over Flatly.
 $toc-font-size: 0.85rem;
 
 /*-- scss:rules --*/
 
-// Reusable post action toolbar (Share / Print / Download). Hidden on print via print.css.
+// Reusable post action toolbar (Print / Download). Hidden on print via print.css.
 .post-toolbar {
   display: flex;
   gap: 1.25rem;
-  justify-content: flex-end;   // set to flex-start to left-align the toolbar
-  align-items: flex-start;
-  margin: 0 0 1.25rem 0;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
 }
-
 .post-toolbar__btn {
   display: inline-flex;
   flex-direction: column;
@@ -30,11 +28,22 @@ $toc-font-size: 0.85rem;
   transition: color 0.15s ease;
 
   .bi { font-size: 1.1rem; }
-
   &:hover { color: $primary; text-decoration: none; }
-  &:focus-visible {
-    outline: 2px solid $primary;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
+  &:focus-visible { outline: 2px solid $primary; outline-offset: 2px; border-radius: 4px; }
 }
+
+// Post header row: byline (date | author) on the left, action toolbar on the right.
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.75rem 0;
+}
+.post-header__byline { color: rgba(0, 0, 0, 0.55); font-size: 0.9rem; }
+.post-header__byline p { margin: 0; }
+.post-header__date { white-space: nowrap; }
+
+// Remove Quarto's default AUTHOR / PUBLISHED block (replaced by the custom byline above).
+.quarto-title-meta { display: none !important; }

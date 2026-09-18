@@ -1,0 +1,18 @@
+::::: {.content-visible when-format="html"}
+:::: {.post-header .no-print}
+::: {.post-header__byline}
+[{{< meta date >}}]{.post-header__date} | {{< meta author >}}
+:::
+
+```{=html}
+<div class="post-toolbar" role="group" aria-label="Post actions">
+  <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
+    <i class="bi bi-printer" aria-hidden="true"></i><span>Print</span>
+  </button>
+  <a class="post-toolbar__btn" data-action="pdf" href="index.pdf" download title="Download as PDF">
+    <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i><span>Download</span>
+  </a>
+</div>
+```
+::::
+:::::
