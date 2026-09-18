@@ -47,3 +47,6 @@ $toc-font-size: 0.85rem;
 
 // Remove Quarto's default AUTHOR / PUBLISHED block (replaced by the custom byline above).
 .quarto-title-meta { display: none !important; }
+
+// Inline reference markers: superscript on the web; plain bracketed + clickable in the PDF.
+.refmark { vertical-align: super; font-size: 0.75em; line-height: 0; }

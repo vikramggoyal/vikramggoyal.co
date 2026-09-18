@@ -35,12 +35,12 @@ website:
         href: blog.xml
         aria-label: RSS
   page-footer:
-    center: "© 2026 Vikram Goyal · Built with Quarto"
+    center: "© Vikram Goyal"
 
 format:
   html:
     theme:
-      - flatly
+      - united
       - styles/custom.scss
     css: styles/print.css        # @media print rules; harmless on screen
     toc: true

@@ -6,6 +6,20 @@ date: "2026-08-08"
 categories: ["AI", "Leadership", "The Executive's AI Compass"]
 image: img-p1-1-to-visualise-how-data-moves-through-this-e.jpg
 toc: true
+format:
+  typst:
+    output-file: executives-ai-compass-part-1
+    include-before-body:
+      text: |
+        #let article-url = "vikramggoyal.co/posts/executives-ai-compass-part-1/"
+        #set page(footer: context {
+          set text(size: 8pt, fill: luma(140))
+          grid(
+            columns: (1fr, 1fr),
+            align(left)[vikramggoyal.co],
+            align(right)[#link("https://" + article-url)[#article-url]],
+          )
+        })
 ---
 
 {{< include /_includes/_post-header.qmd >}}
@@ -46,12 +60,12 @@ To sit confidently at the table with your technical partners, you need five foun
 
 AI models do not read text the way humans do. They chop text into fragments called **tokens**, then convert each token into a number, because the model only operates on numbers.
 
-- A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.<sup><a href="#ref-1">[1]</a></sup> The exact split depends on the model's tokeniser, so treat this as an estimate, not a law.
+- A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.[[1]](#ref-1){.refmark} The exact split depends on the model's tokeniser, so treat this as an estimate, not a law.
 - The model uses a built-in vocabulary to map each fragment to a specific token ID.
 
 For example, a phrase like "AI-driven transformation" is split into several fragments, each mapped to a number (e.g., something of the form `<15592> <27233> <11030> <276>`). *These specific numbers are illustrative — the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.*
 
-**The business impact:** Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.<sup><a href="#ref-1">[1]</a></sup> Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so **prompt discipline is a genuine cost lever.**
+**The business impact:** Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.[[1]](#ref-1){.refmark} Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so **prompt discipline is a genuine cost lever.**
 
 ### 2. Pre-training: the digital neighbourhood map
 
@@ -70,7 +84,7 @@ An LLM's **context window** is its **working memory** for a single conversation 
 - Early models had small storage desks (a few pages of text).
 - Modern enterprise models have large storage desks, letting you drop in lengthy contracts or ledgers within a single prompt.
 
-**The business impact:** If your team feeds the model more than the desk holds, it ***typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.*** Worse, models can also lose track of information buried in the *middle* of a very long input.<sup><a href="#ref-2">[2]</a></sup> Managing what goes on the desk - and where - is critical to avoiding silent blind spots.
+**The business impact:** If your team feeds the model more than the desk holds, it ***typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.*** Worse, models can also lose track of information buried in the *middle* of a very long input.[[2]](#ref-2){.refmark} Managing what goes on the desk - and where - is critical to avoiding silent blind spots.
 
 ### 4. Parameters and weights: the knobs of knowledge
 
@@ -87,7 +101,7 @@ Many AI tools expose a **temperature** setting that governs how much *randomness
 
 ![](img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg){fig-alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"}
 
-*A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn't portable — check your AI model provider's documentation.<sup><a href="#ref-3">[3]</a></sup> The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.*
+*A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn't portable — check your AI model provider's documentation.[[3]](#ref-3){.refmark} The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.*
 
 
 **The business impact:** The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic — the same prompt can yield slightly different answers on different runs.
@@ -96,7 +110,7 @@ Many AI tools expose a **temperature** setting that governs how much *randomness
 
 ## A crucial distinction: generative, predictive — and reinforcement learning
 
-Before moving on, master one line that MIT Sloan Management Review calls a matter of "matching the technology to the specific business problem":<sup><a href="#ref-4">[4]</a></sup> the difference between **generative AI** and **predictive AI** — with a third family, **reinforcement learning**, worth recognising to complete the picture.
+Before moving on, master one line that MIT Sloan Management Review calls a matter of "matching the technology to the specific business problem":[[4]](#ref-4){.refmark} the difference between **generative AI** and **predictive AI** — with a third family, **reinforcement learning**, worth recognising to complete the picture.
 
 ![](img-p1-4-a-crucial-distinction-generative-predictiv.jpg){fig-alt="A crucial distinction: generative, predictive — and reinforcement learning"}
 

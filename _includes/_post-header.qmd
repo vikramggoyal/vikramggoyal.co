@@ -9,10 +9,23 @@
   <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
     <i class="bi bi-printer" aria-hidden="true"></i><span>Print</span>
   </button>
-  <a class="post-toolbar__btn" data-action="pdf" href="index.pdf" download title="Download as PDF">
+  <a class="post-toolbar__btn" data-action="pdf" id="pdf-download-btn" href="index.pdf" download title="Download as PDF">
     <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i><span>Download</span>
   </a>
 </div>
+<script>
+(function () {
+  // Derive the PDF filename from the post slug (the containing folder name in the URL).
+  var btn = document.getElementById('pdf-download-btn');
+  if (!btn) return;
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'posts') {
+    btn.href = slug + '.pdf';
+    btn.download = slug + '.pdf';
+  }
+})();
+</script>
 ```
 ::::
 :::::
