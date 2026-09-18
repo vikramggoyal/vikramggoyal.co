@@ -17,10 +17,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: blog.qmd
         text: Blog
+      - href: about.qmd
+        text: About
       - text: Links
         menu:
           - href: links/youtube.qmd
