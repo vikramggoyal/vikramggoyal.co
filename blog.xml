@@ -29,10 +29,23 @@
   <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
     <span>Print</span>
   </button>
-  <a class="post-toolbar__btn" data-action="pdf" href="index.pdf" download="" title="Download as PDF">
+  <a class="post-toolbar__btn" data-action="pdf" id="pdf-download-btn" href="index.pdf" download="" title="Download as PDF">
     <span>Download</span>
   </a>
 </div>
+<script>
+(function () {
+  // Derive the PDF filename from the post slug (the containing folder name in the URL).
+  var btn = document.getElementById('pdf-download-btn');
+  if (!btn) return;
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'posts') {
+    btn.href = slug + '.pdf';
+    btn.download = slug + '.pdf';
+  }
+})();
+</script>
 </div>
 <p><em>Views are my own, not those of my employer or clients. Some specifics (model names, regulations) may date over time.</em></p>
 <p>Being a leader with the mandate to lead, implement, and deliver a robust, enterprise-grade AI strategy, can be a daunting task. You are expected to transform enterprise operational workflows while dodging a minefield of legal, financial, and technical risk. You do not need to be a software engineer or a data scientist to steer this ship. But knowing exactly what your vendors and consultants are talking about - and being able to genuinely partner with them on the solution - unlocks real operational leverage and business impact.</p>
@@ -63,11 +76,11 @@
 <h3 class="anchored" data-anchor-id="tokens-the-raw-building-blocks">1. Tokens: the raw building blocks</h3>
 <p>AI models do not read text the way humans do. They chop text into fragments called <strong>tokens</strong>, then convert each token into a number, because the model only operates on numbers.</p>
 <ul>
-<li>A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.<sup>[1]</sup> The exact split depends on the model’s tokeniser, so treat this as an estimate, not a law.</li>
+<li>A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.[1] The exact split depends on the model’s tokeniser, so treat this as an estimate, not a law.</li>
 <li>The model uses a built-in vocabulary to map each fragment to a specific token ID.</li>
 </ul>
 <p>For example, a phrase like “AI-driven transformation” is split into several fragments, each mapped to a number (e.g., something of the form <code>&lt;15592&gt; &lt;27233&gt; &lt;11030&gt; &lt;276&gt;</code>). <em>These specific numbers are illustrative — the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.</em></p>
-<p><strong>The business impact:</strong> Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.<sup>[1]</sup> Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so <strong>prompt discipline is a genuine cost lever.</strong></p>
+<p><strong>The business impact:</strong> Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.[1] Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so <strong>prompt discipline is a genuine cost lever.</strong></p>
 </section>
 <section id="pre-training-the-digital-neighbourhood-map" class="level3">
 <h3 class="anchored" data-anchor-id="pre-training-the-digital-neighbourhood-map">2. Pre-training: the digital neighbourhood map</h3>
@@ -83,7 +96,7 @@
 <li>Early models had small storage desks (a few pages of text).</li>
 <li>Modern enterprise models have large storage desks, letting you drop in lengthy contracts or ledgers within a single prompt.</li>
 </ul>
-<p><strong>The business impact:</strong> If your team feeds the model more than the desk holds, it <strong><em>typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.</em></strong> Worse, models can also lose track of information buried in the <em>middle</em> of a very long input.<sup>[2]</sup> Managing what goes on the desk - and where - is critical to avoiding silent blind spots.</p>
+<p><strong>The business impact:</strong> If your team feeds the model more than the desk holds, it <strong><em>typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.</em></strong> Worse, models can also lose track of information buried in the <em>middle</em> of a very long input.[2] Managing what goes on the desk - and where - is critical to avoiding silent blind spots.</p>
 </section>
 <section id="parameters-and-weights-the-knobs-of-knowledge" class="level3">
 <h3 class="anchored" data-anchor-id="parameters-and-weights-the-knobs-of-knowledge">4. Parameters and weights: the knobs of knowledge</h3>
@@ -98,14 +111,14 @@
 <li><strong>High temperature:</strong> more exploratory and creative — the model is willing to take less likely paths.</li>
 </ul>
 <p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></p>
-<p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable — check your AI model provider’s documentation.<sup>[3]</sup> The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
+<p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable — check your AI model provider’s documentation.[3] The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
 <p><strong>The business impact:</strong> The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic — the same prompt can yield slightly different answers on different runs.</p>
 <hr>
 </section>
 </section>
 <section id="a-crucial-distinction-generative-predictive-and-reinforcement-learning" class="level2">
 <h2 class="anchored" data-anchor-id="a-crucial-distinction-generative-predictive-and-reinforcement-learning">A crucial distinction: generative, predictive — and reinforcement learning</h2>
-<p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:<sup>[4]</sup> the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> — with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
+<p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:[4] the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> — with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
 <p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive — and reinforcement learning"></p>
 <ul>
 <li><strong>Generative AI</strong> works with unstructured language, text, and code. It <em>creates</em> new content, and its output is inherently variable. It excels at summarising, drafting, writing code, and orchestrating agentic workflows. It is not a calculator.</li>
