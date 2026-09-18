@@ -1,6 +1,6 @@
-/* Only applies when the reader prints (or "Save as PDF"). Harmless on screen. */
+/* styles/print.css — print-only rules (loaded via `css:` in _quarto.yml).
+   All on-screen styling lives in styles/custom.scss. */
 @media print {
-  /* Hide site chrome */
   header#quarto-header,
   .navbar,
   #quarto-sidebar,
@@ -9,39 +9,16 @@
   .nav-footer,
   footer.footer,
   .quarto-title-banner,
+  .post-header,
   .post-toolbar,
   .no-print {
     display: none !important;
   }
-
-  /* Reclaim the full width the sidebars vacated */
-  #quarto-content,
-  main.content,
-  .page-columns {
-    display: block !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-    grid-template-columns: none !important;
+  #quarto-content, main.content, .page-columns {
+    display: block !important; margin: 0 !important; max-width: 100% !important; grid-template-columns: none !important;
   }
-
-  @page {
-    margin: 2cm;
-  }
-
-  body {
-    font-size: 11pt;
-    color: #000;
-  }
-
-  /* Don't print the raw URL after every link */
-  a[href]::after {
-    content: "" !important;
-  }
-
-  /* Keep figures and tables from splitting awkwardly */
-  figure,
-  table,
-  .cell-output {
-    break-inside: avoid;
-  }
+  @page { margin: 2cm; }
+  body { font-size: 11pt; color: #000; }
+  a[href]::after { content: "" !important; }
+  figure, table, .cell-output { break-inside: avoid; }
 }

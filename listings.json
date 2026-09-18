@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog.html",
-    "items": []
+    "items": [
+      "/posts/executives-ai-compass-part-1/index.html"
+    ]
   }
 ]
