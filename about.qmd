@@ -16,7 +16,7 @@ about:
 
 I'm an actuary and software engineer with fifteen years modernizing how life & annuity insurers run their finance, actuarial, and capital operations across the US, Asia-Pacific, and the Middle East. I turn fragmented, manual processes into governed, scalable platforms that lower cost, strengthen controls, and give leadership faster, auditable numbers to act on.
 
-Most recently I directed a greenfield build of the core Finance & Actuarial platforms — implementing automated, governed systems that replaced manual processes and delivered multi-million-dollar annual savings. I led the F&A technology transition that enabled a major reinsurance capital-release program, and today I own the AI strategy for Finance & Actuarial.
+Most recently I directed a greenfield build of the core Finance & Actuarial platforms — implementing automated, governed systems that replaced manual processes. I led the F&A technology transition that enabled a major reinsurance capital-release program, and today I continue to explore how AI can be leveraged for operational efficiencies releasing human capacity for value creation purposes.
 
 I've spent my career across two disciplines that rarely sit together — actuarial modeling of liabilities, valuation, and capital, and the engineering that turns those models, and the data they depend on, into production systems. I am now bringing AI into that same regulated, high-stakes core. I don't hand over a deck and walk away; I own the operating model and live with the outcome. Connecting actuarial judgment, capital reporting, and delivery into one plan people can trust is where I do my best work — the perspective I brought to the keynote stage at Insurance Innovators in Nashville (2025).
 
