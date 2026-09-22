@@ -10,7 +10,379 @@
 <atom:link href="https://vikramggoyal.co/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Deterministic expectations in a Stochastic life</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sat, 08 Aug 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 15 Aug 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>The Executive’s AI Compass — Part 2: The Mechanics of Prompting</title>
+  <dc:creator>Vikram Goyal</dc:creator>
+  <link>https://vikramggoyal.co/posts/executives-ai-compass-part-2/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="post-header no-print">
+<div class="post-header__byline">
+<p><span class="post-header__date">August 15, 2026</span> | Vikram Goyal</p>
+</div>
+<div class="post-toolbar" aria-label="Post actions">
+  <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
+    <span>Print</span>
+  </button>
+  <a class="post-toolbar__btn" data-action="pdf" id="pdf-download-btn" href="index.pdf" download="" title="Download as PDF">
+    <span>Download</span>
+  </a>
+</div>
+<script>
+(function () {
+  // Derive the PDF filename from the post slug (the containing folder name in the URL).
+  var btn = document.getElementById('pdf-download-btn');
+  if (!btn) return;
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'posts') {
+    btn.href = slug + '.pdf';
+    btn.download = slug + '.pdf';
+  }
+})();
+</script>
+</div>
+<p><em>Views are my own, not those of my employer or clients. Some specifics (model names, regulations) may date over time.</em></p>
+<p>In Part 1 we examined the building blocks of the digital brain - tokens, word maps, the memory desk, parameters, and the creativity dial - and reframed viewing an AI model as a hyper-sophisticated prediction engine.</p>
+<p><strong>The series map:</strong></p>
+<ul>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-1/">Part 1: Demystifying the Digital Brain</a></strong></li>
+<li><strong>Part 2: The Mechanics of Prompting</strong> <em>(you are here)</em></li>
+<li><strong>Part 3: The Dawn of Agentic AI</strong></li>
+<li><strong>Part 4: Architectural Fluency</strong></li>
+<li><strong>Part 5: Leading Enterprise AI Projects</strong></li>
+<li><strong>Part 6: The Operating Model</strong></li>
+<li><strong>Part 7: The Data Foundation</strong></li>
+<li><strong>Part 8: When AI Joins the Management System</strong></li>
+<li><strong>Bonus: Downloadable Artefacts for Leading AI Projects</strong></li>
+</ul>
+<p>Now we turn to your primary steering wheel: how you actually talk to the machine to get <strong>reliable, enterprise-grade results.</strong></p>
+<hr>
+<section id="part-2-the-mechanics-of-prompting" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-the-mechanics-of-prompting">Part 2: The Mechanics of Prompting</h2>
+<p>Early adopters of LLMs coined a flashy phrase - “prompt engineering”.</p>
+<p>Remember from Part 1, AI models are mathematical probabilistic engines trained on natural language where words are stored in a neighbourhood map. Prompting is directing your AI model to access the correct neighbourhood maps to get you a reliable response.</p>
+<p>An LLM does not think, feel, or intrinsically understand your goals. When you write a prompt, you are not having a casual conversation — you are narrowing the mathematical probabilities of what the model produces next. To bridge the gap between casual chat and predictable corporate output, it helps to understand what happens when a prompt is processed.</p>
+<p>Worth noting: leading model providers have made prompting far more forgiving than it was in 2023. Clear, well-structured instructions still matter enormously - but the goal today is <em>reliability and repeatability</em>.</p>
+</section>
+<section id="how-a-prompt-works-mechanically" class="level2">
+<h2 class="anchored" data-anchor-id="how-a-prompt-works-mechanically">How a prompt works, mechanically</h2>
+<p>When your team submits a prompt, the text becomes tokens and flows into the model’s network. Your instructions act like a filter. By supplying a role, vocabulary, constraints, and context, you shift the internal probabilities toward the kind of output you want.</p>
+<p>A vague prompt like <em>“Write a status report”</em> leaves an enormous field of plausible continuations (probabilities), producing something generic. Structured boundaries narrow that field to a precise, professional target.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg" class="img-fluid figure-img"></p>
+<figcaption>How a prompt works, mechanically</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-enterprise-prompt-blueprint" class="level2">
+<h2 class="anchored" data-anchor-id="the-enterprise-prompt-blueprint">The enterprise prompt blueprint</h2>
+<p>To help your teams build repeatable workflows rather than play guessing games, enforce a consistent structure. A production-grade prompt has four parts:</p>
+<ol type="1">
+<li><strong>Persona — who the model should be acting as in this exercise.</strong> State the role and expertise to assume. <em>Example: “You are a corporate risk auditor specialising in international supply-chain regulation.”</em></li>
+<li><strong>Context and input data — what it needs to know.</strong> Provide the raw material, clearly separated from your instructions using markers or delimiters so the model doesn’t confuse data with commands. <em>Example: <code>[DATA START] …logistics report… [DATA END]</code></em></li>
+<li><strong>Constraints and guardrails — what it must not do.</strong> Set the borders. This is your first line of defence against fabricated information (hallucinations) and scope creep. <em>Example: “Base your analysis strictly on the provided text. If the answer isn’t there, state ‘Data missing’ — do not guess.”</em></li>
+<li><strong>Output specification — how the result should look.</strong> Dictate structure, length, tone, and format so the output slots into your process. <em>Example: “Give a three-bullet executive summary, then a table mapping each risk to its operational impact.”</em></li>
+</ol>
+</section>
+<section id="ask-for-the-reasoning-chain-of-thought" class="level2">
+<h2 class="anchored" data-anchor-id="ask-for-the-reasoning-chain-of-thought">Ask for the reasoning: chain-of-thought</h2>
+<p>For anything involving analysis, multi-step logic, or a judgement, one small instruction reliably improves quality: ask the model to <strong>work through its reasoning step by step</strong> before it gives an answer. This is <strong>chain-of-thought</strong> prompting.</p>
+<p>Why it works connects back to Part 1: because the model generates one fragment at a time, forcing it to lay out the intermediate steps gives it a better chance of reaching a sound conclusion — and gives <em>you</em> something to inspect. A bare answer hides its logic; a reasoned one exposes it, so an error becomes visible rather than buried.</p>
+<p>The executive value is twofold. Accuracy on reasoning-heavy tasks improves; and, more importantly for governance, the visible reasoning is auditable — you can see <em>why</em> the model reached a conclusion. One caution: the explanation given by the LLM is a plausible reconstruction, not a literal readout of the model’s internals, so treat it as an aid to scrutiny, not proof of the path the model took.</p>
+</section>
+<section id="beyond-instructions-few-shot-prompting" class="level2">
+<h2 class="anchored" data-anchor-id="beyond-instructions-few-shot-prompting">Beyond instructions: few-shot prompting</h2>
+<p>If you want the model to match a specific corporate format or brand voice, telling it what to do is often not enough. You have to <em>show</em> your desired output.</p>
+<p>This is <strong>few-shot prompting</strong>: including two or three examples of ideal input-and-approved-output pairs directly in the prompt. The model infers the pattern from your examples and mirrors the structure and style.[1] For format-sensitive and style-sensitive tasks, adding examples is one of the most reliable ways to lift output quality without touching the model itself.</p>
+<blockquote class="blockquote">
+<p><strong>A note on precision:</strong> You may see confident claims that a technique lifts reliability “from 60% to 95%.” Treat such figures with caution — real gains depend entirely on the task, the model, and how you measure success. The honest, defensible statement is that well-chosen examples <em>substantially and measurably</em> improve consistency on the tasks they fit. Which brings us to the point most prompt guides skip.</p>
+</blockquote>
+</section>
+<section id="you-cannot-trust-a-prompt-you-have-not-tested" class="level2">
+<h2 class="anchored" data-anchor-id="you-cannot-trust-a-prompt-you-have-not-tested">You cannot trust a prompt you have not tested</h2>
+<p>A prompt that works once is an anecdote, not a process. Before a prompt anchors anything important, your teams should evaluate it against a small set of representative inputs with known good answers, and re-check it whenever the underlying model is updated, or source data formats are changed — because provider model updates or input data formats can shift behaviour for exactly the same prompts. This habit of systematic verification is the through-line to <em>Diligence</em>, one of the four executive competencies I talk about in Part 5.</p>
+<p><strong>The business impact:</strong> A poorly structured prompt demands rounds of manual correction, draining time and compute. Treated as an engineering artefact — structured, exampled, and tested — a prompt becomes a predictable automation block that integrates cleanly into existing workflows. The difference between the two is the difference between a demo and a dependable process.</p>
+<hr>
+</section>
+<section id="a-reusable-prompt-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-prompt-template">A reusable prompt template</h2>
+<p>I personally use this prompt structure as it helps me keep my thoughts structured and get the most out of the models. You can copy, fill in, and reuse this structure for any production task. Complete each tag with the guidance shown, and delete the optional tags you don’t need. The more of these you specify, the more reliable and repeatable the output.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1">&lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">system_prompt</span>&gt;</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">persona</span>&gt;</span>
+<span id="cb1-4">    Who the AI should act as — role, seniority, domain expertise, point of view.</span>
+<span id="cb1-5">    e.g. "A corporate risk auditor specialising in international supply-chain regulation."</span>
+<span id="cb1-6">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">persona</span>&gt;</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">context</span>&gt;</span>
+<span id="cb1-9">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">objective</span>&gt;</span>
+<span id="cb1-10">      The single outcome this prompt must achieve, in one sentence.</span>
+<span id="cb1-11">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">objective</span>&gt;</span>
+<span id="cb1-12">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">audience</span>&gt;</span>
+<span id="cb1-13">      Who will read or use the output, and their level — e.g. "the board; non-technical."</span>
+<span id="cb1-14">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">audience</span>&gt;</span>
+<span id="cb1-15">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">background</span>&gt;</span>
+<span id="cb1-16">      Situational context the model needs: what is happening, why, and any prior decisions.</span>
+<span id="cb1-17">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">background</span>&gt;</span>
+<span id="cb1-18">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">context</span>&gt;</span>
+<span id="cb1-19"></span>
+<span id="cb1-20">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">data</span>&gt;</span>
+<span id="cb1-21">    The raw material to work from, clearly delimited so it is not mistaken for instructions.</span>
+<span id="cb1-22">    Paste source text, tables, or documents between the markers.</span>
+<span id="cb1-23">    [DATA START]</span>
+<span id="cb1-24">    ...</span>
+<span id="cb1-25">    [DATA END]</span>
+<span id="cb1-26">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">data</span>&gt;</span>
+<span id="cb1-27"></span>
+<span id="cb1-28">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">constraints</span>&gt;</span>
+<span id="cb1-29">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">data_reach</span>&gt;</span>
+<span id="cb1-30">      What the model may and may not draw on —</span>
+<span id="cb1-31">      e.g. "Use ONLY the text in &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">data</span>&gt;; do not use outside or prior knowledge."</span>
+<span id="cb1-32">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">data_reach</span>&gt;</span>
+<span id="cb1-33">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">fact_checking</span>&gt;</span>
+<span id="cb1-34">      How to handle uncertainty —</span>
+<span id="cb1-35">      e.g. "If the answer is not in the data, write 'Data missing'. Do not guess or fabricate."</span>
+<span id="cb1-36">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">fact_checking</span>&gt;</span>
+<span id="cb1-37">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">scope</span>&gt;</span>
+<span id="cb1-38">      Boundaries — what is out of scope, what not to do, topic or length limits.</span>
+<span id="cb1-39">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">scope</span>&gt;</span>
+<span id="cb1-40">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">safety_and_compliance</span>&gt;</span>
+<span id="cb1-41">      Privacy, regulatory, or policy rules —</span>
+<span id="cb1-42">      e.g. "Never reveal PII; flag anything needing legal review."</span>
+<span id="cb1-43">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">safety_and_compliance</span>&gt;</span>
+<span id="cb1-44">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">constraints</span>&gt;</span>
+<span id="cb1-45"></span>
+<span id="cb1-46">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">reasoning</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">optional=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"true"</span>&gt;</span>
+<span id="cb1-47">    For analysis or judgement tasks: "Work through the reasoning step by step, then give the</span>
+<span id="cb1-48">    final answer." (Chain-of-thought — improves accuracy and makes the logic auditable.)</span>
+<span id="cb1-49">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">reasoning</span>&gt;</span>
+<span id="cb1-50"></span>
+<span id="cb1-51">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">examples</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">optional=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"true"</span>&gt;</span>
+<span id="cb1-52">    Few-shot: 1–3 pairs of ideal input and approved output, to lock format and voice.</span>
+<span id="cb1-53">    Omit for simple tasks.</span>
+<span id="cb1-54">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">example</span>&gt;</span>
+<span id="cb1-55">      &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">input</span>&gt;...&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">input</span>&gt;</span>
+<span id="cb1-56">      &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">output</span>&gt;...&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">output</span>&gt;</span>
+<span id="cb1-57">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">example</span>&gt;</span>
+<span id="cb1-58">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">examples</span>&gt;</span>
+<span id="cb1-59"></span>
+<span id="cb1-60">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">output_specification</span>&gt;</span>
+<span id="cb1-61">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">sample_output</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">optional=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"true"</span>&gt;</span>
+<span id="cb1-62">      A skeleton or exact template of the desired response, if a specific structure is</span>
+<span id="cb1-63">      required; the model will mirror it.</span>
+<span id="cb1-64">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">sample_output</span>&gt;</span>
+<span id="cb1-65">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">format</span>&gt;</span>
+<span id="cb1-66">      Structure — e.g. "Three-bullet executive summary, then a table of risk → impact."</span>
+<span id="cb1-67">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">format</span>&gt;</span>
+<span id="cb1-68">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">length</span>&gt;</span>
+<span id="cb1-69">      Size limits — e.g. "Under 200 words" or "one page."</span>
+<span id="cb1-70">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">length</span>&gt;</span>
+<span id="cb1-71">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">tone</span>&gt;</span>
+<span id="cb1-72">      Voice and register — e.g. "Formal, precise, board-appropriate; no marketing language."</span>
+<span id="cb1-73">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">tone</span>&gt;</span>
+<span id="cb1-74">    &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">references</span>&gt;</span>
+<span id="cb1-75">      Whether and how to cite — e.g. "Cite the source line for every claim, as [Doc, p.3]."</span>
+<span id="cb1-76">    &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">references</span>&gt;</span>
+<span id="cb1-77">  &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">output_specification</span>&gt;</span>
+<span id="cb1-78"></span>
+<span id="cb1-79">&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
+<p>Read it against the four blueprint parts above: <code>&lt;persona&gt;</code>, <code>&lt;context&gt;</code> + <code>&lt;data&gt;</code>, <code>&lt;constraints&gt;</code>, and <code>&lt;output_specification&gt;</code> are the core; <code>&lt;reasoning&gt;</code> and <code>&lt;examples&gt;</code> add the chain-of-thought and few-shot techniques when a task needs them.</p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Start from the <strong>reusable prompt template above</strong> — fill each tag, and delete the optional ones you don’t need.</li>
+<li>Prompting is <strong>programming a probabilistic system in natural language</strong> — structure narrows the output.</li>
+<li>A production prompt has four parts: <strong>persona, context/data, constraints, output specification.</strong></li>
+<li>For reasoning tasks, ask for step-by-step reasoning (<strong>chain-of-thought</strong>); to match a format or voice, show 2–3 examples (<strong>few-shot</strong>).</li>
+<li>A prompt isn’t trusted until it’s <strong>tested</strong> against known-good cases — and re-tested whenever the model updates or data format changes.</li>
+</ul>
+</section>
+<section id="your-onboarding-status" class="level2">
+<h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
+<p>You now know that the consistency of an AI’s output depends chiefly on the structure of its input — and that a prompt earns trust only once it has been tested. You can look at a team’s prompt and diagnose why a system is giving erratic answers.</p>
+<p>But individual prompts, however well-engineered, still depend on a human pressing “enter” every time. To scale automation, we connect these prompt blocks into automated ecosystems — and give them access to your live, proprietary data.</p>
+<p>In <strong>Part 3: The Dawn of Agentic AI</strong>, we move past single prompts into environments where specialised AI components retrieve real data, cooperate, check one another, and execute multi-step business goals with a human firmly in the loop.</p>
+<hr>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ol type="1">
+<li><span id="ref-1"></span>Brown, T. et al.&nbsp;(2020). “Language Models are Few-Shot Learners.” <a href="https://arxiv.org/abs/2005.14165" class="uri">https://arxiv.org/abs/2005.14165</a> <em>(The foundational demonstration that in-context examples improve task performance.)</em></li>
+</ol>
+<p><em>This article is educational and does not constitute legal or financial advice. Model behaviours change frequently — verify specifics against current vendor documentation and test prompts on your own data.</em></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>Leadership</category>
+  <category>The Executive&#39;s AI Compass</category>
+  <guid>https://vikramggoyal.co/posts/executives-ai-compass-part-2/</guid>
+  <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>The Executive’s AI Compass — Part 1: Demystifying the Digital Brain</title>
   <dc:creator>Vikram Goyal</dc:creator>
