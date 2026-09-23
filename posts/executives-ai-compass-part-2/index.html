@@ -8,9 +8,9 @@
 
 <meta name="author" content="Vikram Goyal">
 <meta name="dcterms.date" content="2026-08-15">
-<meta name="description" content="How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested — plus a reusable prompt template.">
+<meta name="description" content="How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested - plus a reusable prompt template.">
 
-<title>The Executive’s AI Compass — Part 2: The Mechanics of Prompting – Vikram G Goyal</title>
+<title>The Executive’s AI Compass - Part 2: The Mechanics of Prompting – Vikram G Goyal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-72aa6392b8fef5f8e1400aba8338a625.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c00b813442cb2e0f16b041ac910e87b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles/print.css">
+<meta property="og:title" content="The Executive’s AI Compass - Part 2: The Mechanics of Prompting – Vikram G Goyal">
+<meta property="og:description" content="How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested - plus a reusable prompt template.">
+<meta property="og:image" content="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg">
+<meta property="og:site_name" content="Vikram G Goyal">
+<meta name="twitter:title" content="The Executive’s AI Compass - Part 2: The Mechanics of Prompting – Vikram G Goyal">
+<meta name="twitter:description" content="How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested - plus a reusable prompt template.">
+<meta name="twitter:image" content="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -184,10 +192,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The Executive’s AI Compass — Part 2: The Mechanics of Prompting</h1>
+      <h1 class="title">The Executive’s AI Compass - Part 2: The Mechanics of Prompting</h1>
                   <div>
         <div class="description">
-          How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested — plus a reusable prompt template.
+          How instructions become outputs: the four-part enterprise prompt blueprint, chain-of-thought and few-shot techniques, why a prompt isn’t trusted until it’s tested - plus a reusable prompt template.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -295,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="part-2-the-mechanics-of-prompting">Part 2: The Mechanics of Prompting</h2>
 <p>Early adopters of LLMs coined a flashy phrase - “prompt engineering”.</p>
 <p>Remember from Part 1, AI models are mathematical probabilistic engines trained on natural language where words are stored in a neighbourhood map. Prompting is directing your AI model to access the correct neighbourhood maps to get you a reliable response.</p>
-<p>An LLM does not think, feel, or intrinsically understand your goals. When you write a prompt, you are not having a casual conversation — you are narrowing the mathematical probabilities of what the model produces next. To bridge the gap between casual chat and predictable corporate output, it helps to understand what happens when a prompt is processed.</p>
+<p>An LLM does not think, feel, or intrinsically understand your goals. When you write a prompt, you are not having a casual conversation - you are narrowing the mathematical probabilities of what the model produces next. To bridge the gap between casual chat and predictable corporate output, it helps to understand what happens when a prompt is processed.</p>
 <p>Worth noting: leading model providers have made prompting far more forgiving than it was in 2023. Clear, well-structured instructions still matter enormously - but the goal today is <em>reliability and repeatability</em>.</p>
 </section>
 <section id="how-a-prompt-works-mechanically" class="level2">
@@ -313,30 +321,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-enterprise-prompt-blueprint">The enterprise prompt blueprint</h2>
 <p>To help your teams build repeatable workflows rather than play guessing games, enforce a consistent structure. A production-grade prompt has four parts:</p>
 <ol type="1">
-<li><strong>Persona — who the model should be acting as in this exercise.</strong> State the role and expertise to assume. <em>Example: “You are a corporate risk auditor specialising in international supply-chain regulation.”</em></li>
-<li><strong>Context and input data — what it needs to know.</strong> Provide the raw material, clearly separated from your instructions using markers or delimiters so the model doesn’t confuse data with commands. <em>Example: <code>[DATA START] …logistics report… [DATA END]</code></em></li>
-<li><strong>Constraints and guardrails — what it must not do.</strong> Set the borders. This is your first line of defence against fabricated information (hallucinations) and scope creep. <em>Example: “Base your analysis strictly on the provided text. If the answer isn’t there, state ‘Data missing’ — do not guess.”</em></li>
-<li><strong>Output specification — how the result should look.</strong> Dictate structure, length, tone, and format so the output slots into your process. <em>Example: “Give a three-bullet executive summary, then a table mapping each risk to its operational impact.”</em></li>
+<li><strong>Persona - who the model should be acting as in this exercise.</strong> State the role and expertise to assume. <em>Example: “You are a corporate risk auditor specialising in international supply-chain regulation.”</em></li>
+<li><strong>Context and input data - what it needs to know.</strong> Provide the raw material, clearly separated from your instructions using markers or delimiters so the model doesn’t confuse data with commands. <em>Example: <code>[DATA START] …logistics report… [DATA END]</code></em></li>
+<li><strong>Constraints and guardrails - what it must not do.</strong> Set the borders. This is your first line of defence against fabricated information (hallucinations) and scope creep. <em>Example: “Base your analysis strictly on the provided text. If the answer isn’t there, state ‘Data missing’ - do not guess.”</em></li>
+<li><strong>Output specification - how the result should look.</strong> Dictate structure, length, tone, and format so the output slots into your process. <em>Example: “Give a three-bullet executive summary, then a table mapping each risk to its operational impact.”</em></li>
 </ol>
 </section>
 <section id="ask-for-the-reasoning-chain-of-thought" class="level2">
 <h2 class="anchored" data-anchor-id="ask-for-the-reasoning-chain-of-thought">Ask for the reasoning: chain-of-thought</h2>
 <p>For anything involving analysis, multi-step logic, or a judgement, one small instruction reliably improves quality: ask the model to <strong>work through its reasoning step by step</strong> before it gives an answer. This is <strong>chain-of-thought</strong> prompting.</p>
-<p>Why it works connects back to Part 1: because the model generates one fragment at a time, forcing it to lay out the intermediate steps gives it a better chance of reaching a sound conclusion — and gives <em>you</em> something to inspect. A bare answer hides its logic; a reasoned one exposes it, so an error becomes visible rather than buried.</p>
-<p>The executive value is twofold. Accuracy on reasoning-heavy tasks improves; and, more importantly for governance, the visible reasoning is auditable — you can see <em>why</em> the model reached a conclusion. One caution: the explanation given by the LLM is a plausible reconstruction, not a literal readout of the model’s internals, so treat it as an aid to scrutiny, not proof of the path the model took.</p>
+<p>Why it works connects back to Part 1: because the model generates one fragment at a time, forcing it to lay out the intermediate steps gives it a better chance of reaching a sound conclusion - and gives <em>you</em> something to inspect. A bare answer hides its logic; a reasoned one exposes it, so an error becomes visible rather than buried.</p>
+<p>The executive value is twofold. Accuracy on reasoning-heavy tasks improves; and, more importantly for governance, the visible reasoning is auditable - you can see <em>why</em> the model reached a conclusion. One caution: the explanation given by the LLM is a plausible reconstruction, not a literal readout of the model’s internals, so treat it as an aid to scrutiny, not proof of the path the model took.</p>
 </section>
 <section id="beyond-instructions-few-shot-prompting" class="level2">
 <h2 class="anchored" data-anchor-id="beyond-instructions-few-shot-prompting">Beyond instructions: few-shot prompting</h2>
 <p>If you want the model to match a specific corporate format or brand voice, telling it what to do is often not enough. You have to <em>show</em> your desired output.</p>
 <p>This is <strong>few-shot prompting</strong>: including two or three examples of ideal input-and-approved-output pairs directly in the prompt. The model infers the pattern from your examples and mirrors the structure and style.<a href="#ref-1" class="refmark">[1]</a> For format-sensitive and style-sensitive tasks, adding examples is one of the most reliable ways to lift output quality without touching the model itself.</p>
 <blockquote class="blockquote">
-<p><strong>A note on precision:</strong> You may see confident claims that a technique lifts reliability “from 60% to 95%.” Treat such figures with caution — real gains depend entirely on the task, the model, and how you measure success. The honest, defensible statement is that well-chosen examples <em>substantially and measurably</em> improve consistency on the tasks they fit. Which brings us to the point most prompt guides skip.</p>
+<p><strong>A note on precision:</strong> You may see confident claims that a technique lifts reliability “from 60% to 95%.” Treat such figures with caution - real gains depend entirely on the task, the model, and how you measure success. The honest, defensible statement is that well-chosen examples <em>substantially and measurably</em> improve consistency on the tasks they fit. Which brings us to the point most prompt guides skip.</p>
 </blockquote>
 </section>
 <section id="you-cannot-trust-a-prompt-you-have-not-tested" class="level2">
 <h2 class="anchored" data-anchor-id="you-cannot-trust-a-prompt-you-have-not-tested">You cannot trust a prompt you have not tested</h2>
-<p>A prompt that works once is an anecdote, not a process. Before a prompt anchors anything important, your teams should evaluate it against a small set of representative inputs with known good answers, and re-check it whenever the underlying model is updated, or source data formats are changed — because provider model updates or input data formats can shift behaviour for exactly the same prompts. This habit of systematic verification is the through-line to <em>Diligence</em>, one of the four executive competencies I talk about in Part 5.</p>
-<p><strong>The business impact:</strong> A poorly structured prompt demands rounds of manual correction, draining time and compute. Treated as an engineering artefact — structured, exampled, and tested — a prompt becomes a predictable automation block that integrates cleanly into existing workflows. The difference between the two is the difference between a demo and a dependable process.</p>
+<p>A prompt that works once is an anecdote, not a process. Before a prompt anchors anything important, your teams should evaluate it against a small set of representative inputs with known good answers, and re-check it whenever the underlying model is updated, or source data formats are changed - because provider model updates or input data formats can shift behaviour for exactly the same prompts. This habit of systematic verification is the through-line to <em>Diligence</em>, one of the four executive competencies I talk about in Part 5.</p>
+<p><strong>The business impact:</strong> A poorly structured prompt demands rounds of manual correction, draining time and compute. Treated as an engineering artefact - structured, exampled, and tested - a prompt becomes a predictable automation block that integrates cleanly into existing workflows. The difference between the two is the difference between a demo and a dependable process.</p>
 <hr>
 </section>
 <section id="a-reusable-prompt-template" class="level2">
@@ -345,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">system_prompt</span>&gt;</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">persona</span>&gt;</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Who the AI should act as — role, seniority, domain expertise, point of view.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Who the AI should act as - role, seniority, domain expertise, point of view.</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    e.g. "A corporate risk auditor specialising in international supply-chain regulation."</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">persona</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -354,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      The single outcome this prompt must achieve, in one sentence.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">objective</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">audience</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      Who will read or use the output, and their level — e.g. "the board; non-technical."</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      Who will read or use the output, and their level - e.g. "the board; non-technical."</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">audience</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">background</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      Situational context the model needs: what is happening, why, and any prior decisions.</span>
@@ -371,25 +379,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">constraints</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">data_reach</span>&gt;</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      What the model may and may not draw on —</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      What the model may and may not draw on -</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      e.g. "Use ONLY the text in &lt;<span class="kw">data</span>&gt;; do not use outside or prior knowledge."</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">data_reach</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">fact_checking</span>&gt;</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      How to handle uncertainty —</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      How to handle uncertainty -</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      e.g. "If the answer is not in the data, write 'Data missing'. Do not guess or fabricate."</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">fact_checking</span>&gt;</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">scope</span>&gt;</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      Boundaries — what is out of scope, what not to do, topic or length limits.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      Boundaries - what is out of scope, what not to do, topic or length limits.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">scope</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">safety_and_compliance</span>&gt;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      Privacy, regulatory, or policy rules —</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      Privacy, regulatory, or policy rules -</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      e.g. "Never reveal PII; flag anything needing legal review."</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">safety_and_compliance</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">constraints</span>&gt;</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">reasoning</span> <span class="ot">optional=</span><span class="st">"true"</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    For analysis or judgement tasks: "Work through the reasoning step by step, then give the</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    final answer." (Chain-of-thought — improves accuracy and makes the logic auditable.)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    final answer." (Chain-of-thought - improves accuracy and makes the logic auditable.)</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">reasoning</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">examples</span> <span class="ot">optional=</span><span class="st">"true"</span>&gt;</span>
@@ -407,16 +415,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      required; the model will mirror it.</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">sample_output</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">format</span>&gt;</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      Structure — e.g. "Three-bullet executive summary, then a table of risk → impact."</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      Structure - e.g. "Three-bullet executive summary, then a table of risk → impact."</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">format</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">length</span>&gt;</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>      Size limits — e.g. "Under 200 words" or "one page."</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>      Size limits - e.g. "Under 200 words" or "one page."</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">length</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">tone</span>&gt;</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      Voice and register — e.g. "Formal, precise, board-appropriate; no marketing language."</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      Voice and register - e.g. "Formal, precise, board-appropriate; no marketing language."</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">tone</span>&gt;</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">references</span>&gt;</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      Whether and how to cite — e.g. "Cite the source line for every claim, as [Doc, p.3]."</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      Whether and how to cite - e.g. "Cite the source line for every claim, as [Doc, p.3]."</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">references</span>&gt;</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">output_specification</span>&gt;</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
@@ -426,17 +434,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="key-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Start from the <strong>reusable prompt template above</strong> — fill each tag, and delete the optional ones you don’t need.</li>
-<li>Prompting is <strong>programming a probabilistic system in natural language</strong> — structure narrows the output.</li>
+<li>Start from the <strong>reusable prompt template above</strong> - fill each tag, and delete the optional ones you don’t need.</li>
+<li>Prompting is <strong>programming a probabilistic system in natural language</strong> - structure narrows the output.</li>
 <li>A production prompt has four parts: <strong>persona, context/data, constraints, output specification.</strong></li>
 <li>For reasoning tasks, ask for step-by-step reasoning (<strong>chain-of-thought</strong>); to match a format or voice, show 2–3 examples (<strong>few-shot</strong>).</li>
-<li>A prompt isn’t trusted until it’s <strong>tested</strong> against known-good cases — and re-tested whenever the model updates or data format changes.</li>
+<li>A prompt isn’t trusted until it’s <strong>tested</strong> against known-good cases - and re-tested whenever the model updates or data format changes.</li>
 </ul>
 </section>
 <section id="your-onboarding-status" class="level2">
 <h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
-<p>You now know that the consistency of an AI’s output depends chiefly on the structure of its input — and that a prompt earns trust only once it has been tested. You can look at a team’s prompt and diagnose why a system is giving erratic answers.</p>
-<p>But individual prompts, however well-engineered, still depend on a human pressing “enter” every time. To scale automation, we connect these prompt blocks into automated ecosystems — and give them access to your live, proprietary data.</p>
+<p>You now know that the consistency of an AI’s output depends chiefly on the structure of its input - and that a prompt earns trust only once it has been tested. You can look at a team’s prompt and diagnose why a system is giving erratic answers.</p>
+<p>But individual prompts, however well-engineered, still depend on a human pressing “enter” every time. To scale automation, we connect these prompt blocks into automated ecosystems - and give them access to your live, proprietary data.</p>
 <p>In <strong>Part 3: The Dawn of Agentic AI</strong>, we move past single prompts into environments where specialised AI components retrieve real data, cooperate, check one another, and execute multi-step business goals with a human firmly in the loop.</p>
 <hr>
 <section id="references" class="level3">
@@ -444,7 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><span id="ref-1"></span>Brown, T. et al.&nbsp;(2020). “Language Models are Few-Shot Learners.” <a href="https://arxiv.org/abs/2005.14165" class="uri">https://arxiv.org/abs/2005.14165</a> <em>(The foundational demonstration that in-context examples improve task performance.)</em></li>
 </ol>
-<p><em>This article is educational and does not constitute legal or financial advice. Model behaviours change frequently — verify specifics against current vendor documentation and test prompts on your own data.</em></p>
+<p><em>This article is educational and does not constitute legal or financial advice. Model behaviours change frequently - verify specifics against current vendor documentation and test prompts on your own data.</em></p>
 
 
 </section>

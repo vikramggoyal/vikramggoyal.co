@@ -10,9 +10,146 @@
 <atom:link href="https://vikramggoyal.co/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Deterministic expectations in a Stochastic life</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sat, 15 Aug 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 23 Aug 2026 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>The Executive’s AI Compass — Part 2: The Mechanics of Prompting</title>
+  <title>The Executive’s AI Compass - Part 3: The Dawn of Agentic AI</title>
+  <dc:creator>Vikram Goyal</dc:creator>
+  <link>https://vikramggoyal.co/posts/executives-ai-compass-part-3/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="post-header no-print">
+<div class="post-header__byline">
+<p><span class="post-header__date">August 23, 2026</span> | Vikram Goyal</p>
+</div>
+<div class="post-toolbar" aria-label="Post actions">
+  <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
+    <span>Print</span>
+  </button>
+  <a class="post-toolbar__btn" data-action="pdf" id="pdf-download-btn" href="index.pdf" download="" title="Download as PDF">
+    <span>Download</span>
+  </a>
+</div>
+<script>
+(function () {
+  // Derive the PDF filename from the post slug (the containing folder name in the URL).
+  var btn = document.getElementById('pdf-download-btn');
+  if (!btn) return;
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'posts') {
+    btn.href = slug + '.pdf';
+    btn.download = slug + '.pdf';
+  }
+})();
+</script>
+</div>
+<p><em>Views are my own, not those of my employer or clients. Some specifics (model names, regulations) may date over time.</em></p>
+<p>In Part 2 we established prompt engineering as the disciplined programming directing a probabilistic text engine (LLM) using natural language - structured, exampled, and tested.</p>
+<p><strong>The series map:</strong></p>
+<ul>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-1/">Part 1: Demystifying the Digital Brain</a></strong></li>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-2/">Part 2: The Mechanics of Prompting</a></strong></li>
+<li><strong>Part 3: The Dawn of Agentic AI</strong> <em>(you are here)</em></li>
+<li><strong>Part 4: Architectural Fluency</strong></li>
+<li><strong>Part 5: Leading Enterprise AI Projects</strong></li>
+<li><strong>Part 6: The Operating Model</strong></li>
+<li><strong>Part 7: The Data Foundation</strong></li>
+<li><strong>Part 8: When AI Joins the Management System</strong></li>
+<li><strong>Bonus: Downloadable Artefacts for Leading AI Projects</strong></li>
+</ul>
+<p>Now we take a structural leap. Individual prompts are useful for personal productivity, but they have two operational limits: they don’t know your fresh, proprietary data, and they rely on a human sitting at a keyboard for every step. To scale AI across an enterprise, we introduce <strong>RAG</strong> and step into <strong>Agentic AI</strong>.</p>
+<hr>
+<section id="part-3-the-dawn-of-agentic-ai" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-the-dawn-of-agentic-ai">Part 3: The Dawn of Agentic AI</h2>
+<p>If your AI strategy consists entirely of employees typing questions into standalone chat screens, you are using a Ferrari to visit the corner shop. You are capturing a fraction of the technology’s value and potential.</p>
+<p>To unlock more, we first solve the model’s biggest blind spot: on its own, the LLM only knows what it learnt during pre-training. It has no knowledge of yesterday’s events, nor of your internal files and assets.</p>
+</section>
+<section id="the-anatomy-of-rag" class="level2">
+<h2 class="anchored" data-anchor-id="the-anatomy-of-rag">The anatomy of RAG</h2>
+<p>To ground a model in your organisation’s truth, technical teams deploy <strong>Retrieval-Augmented Generation (RAG)</strong> - an approach introduced in 2020 to let models pull in external knowledge at query time rather than relying only on what they were trained on.[1] Think of it as shifting the model from a closed-book exam to an open-book one.</p>
+<p>Instead of matching keywords like an old search engine, RAG converts your documents - PDFs, spreadsheets, wikis - into token-based coordinates and stores them in a specialised <strong>vector database</strong>, using the same “neighbourhood map” geometry we met in Part 1. A user’s question is converted the same way, and the system retrieves the passages whose coordinates sit closest to it.</p>
+<p>The canonical pipeline has four steps:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-1-the-canonical-pipeline-has-four-steps.jpg" class="img-fluid figure-img"></p>
+<figcaption>The canonical pipeline has four steps</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><strong>Query.</strong> The user asks a question. (Some systems first use an LLM to rewrite a messy question into a cleaner search phrase - a helpful refinement, not a required step.)</li>
+<li><strong>Embed.</strong> The query is converted into vector coordinates.</li>
+<li><strong>Retrieve.</strong> The system scans the vector database and returns the passages nearest to the query.</li>
+<li><strong>Generate.</strong> Those retrieved passages are inserted into the model’s context window as a reference sheet, and the model composes its answer grounded in them.</li>
+</ol>
+<p><strong>An honest caveat for the boardroom:</strong> RAG <em>substantially reduces</em> fabrication (hallucination) by giving the model real source text to work from - but it does not eliminate it. Answers can still be wrong if retrieval misses the right passage or if the model misreads what it retrieved. Grounding raises the floor; it does not remove the need for the verification habits we’ll cover in Part 5. (Security and access controls around what RAG is allowed to retrieve are a governance topic we treat in Part 4.) <em>Technical implementation of RAG deserves a separate article of its own, and has been left out from here.</em></p>
+</section>
+<section id="stepping-into-the-agentic-shift" class="level2">
+<h2 class="anchored" data-anchor-id="stepping-into-the-agentic-shift">Stepping into the agentic shift</h2>
+<p>RAG on its own is powerful but passive - it looks things up. The operational shift comes when you combine RAG with <strong>AI agents</strong>.</p>
+<p>An AI agent is an LLM configured with an objective, a set of instructions, and the autonomy to choose its own steps, call software tools, and execute multi-step workflows. Instead of writing one prompt and waiting, you deploy something closer to a small digital team.</p>
+<section id="multi-agent-orchestration-the-digital-manager" class="level3">
+<h3 class="anchored" data-anchor-id="multi-agent-orchestration-the-digital-manager">1. Multi-agent orchestration (the digital manager)</h3>
+<p>In a mature setup you don’t deploy a lone agent; you build a framework coordinated by an <strong>orchestrator</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg" class="img-fluid figure-img"></p>
+<figcaption>1. Multi-agent orchestration (the digital manager)</figcaption>
+</figure>
+</div>
+<p>The orchestrator decomposes a high-level goal into a checklist, assigns tasks to specialised sub-agents, monitors their outputs, and reroutes work when one hits an error. A useful executive caveat: more agents mean more moving parts, more cost (tokens), and more places for errors to compound - so start with the simplest design, a flexible yet scalable framework, that solves the problem, not the most elaborate.</p>
+</section>
+<section id="agentic-rag-dynamic-problem-solving" class="level3">
+<h3 class="anchored" data-anchor-id="agentic-rag-dynamic-problem-solving">2. Agentic RAG (dynamic problem-solving)</h3>
+<p>Standard RAG is a single pass: ask, retrieve, answer. <strong>Agentic RAG</strong> adds active reasoning. Asked to compile a regional risk report, the agent notices a missing piece after its first retrieval, formulates a new query, searches a different source, cross-references, and iterates until its evidence looks complete - much closer to how an analyst actually works.</p>
+</section>
+<section id="human-to-agent-hand-off-the-two-way-street" class="level3">
+<h3 class="anchored" data-anchor-id="human-to-agent-hand-off-the-two-way-street">3. Human-to-agent hand-off (the two-way street)</h3>
+<p>The aim of agentic AI is not to remove the human but to pair human judgment with machine volume - <strong>bi-directional collaboration</strong>. When a pipeline hits an unprecedented edge case that breaks its rules, a well-designed agent does not fabricate an answer or crash. It pauses, tags a human with a crisp summary of the conflict, waits for a decision, records the resolution, and resumes. Designing these hand-off points - and deciding which decisions <em>must</em> route to a human - is one of your most important governance choices, and we will formalise it in Part 4.</p>
+<p><strong>The business impact:</strong> Moving from isolated prompts to agentic, RAG-grounded pipelines shifts your workforce from operational doers toward system architects - less time hunting for data in messy directories, more time refining the automated pipelines that drive the enterprise. The prize is real; so is the added complexity, which is exactly why the next two parts are about controlling it.</p>
+<hr>
+</section>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li><strong>RAG</strong> grounds a model in your data (query → embed → retrieve → generate) - it reduces hallucination but does not eliminate it.</li>
+<li>An <strong>agent</strong> adds autonomy: an objective, tools, and multi-step execution; an <strong>orchestrator</strong> coordinates specialised sub-agents.</li>
+<li>Start with the <strong>simplest design that works, within a flexible and scalable framework</strong> - more agents mean more cost and more places for errors to compound.</li>
+<li>Build in <strong>human hand-off points</strong>, and decide up front which decisions must route to a person.</li>
+<li>Build for the process and challenge your business teams to rethink the process.</li>
+</ul>
+</section>
+<section id="your-onboarding-status" class="level2">
+<h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
+<p>You now understand how retrieval, tool use, and multi-agent coordination turn AI from a desktop assistant into a scalable digital workforce - and where its honest limits lie. You can challenge your teams on how they connect individual prompts into autonomous, data-grounded pipelines, and on how those pipelines fail safely.</p>
+<p>But to deploy these systems responsibly, you must understand the structural options. Do you buy a packaged tool, build a custom solution, or extend a frontier model through the cloud? And how do you keep any of it compliant?</p>
+<p>In <strong>Part 4: Architectural Fluency</strong>, I make an attempt to demystify the enterprise tech stack - including the regulatory landscape and the governance “harness” - so you can judge data-privacy boundaries, vendor lock-in, security exposure, and total cost of ownership.</p>
+<hr>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ol type="1">
+<li><span id="ref-1"></span>Lewis, P. et al.&nbsp;(2020). “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” <a href="https://arxiv.org/abs/2005.11401" class="uri">https://arxiv.org/abs/2005.11401</a> <em>(The paper that introduced RAG.)</em></li>
+</ol>
+<p><em>This article is educational and does not constitute legal or financial advice. Architectural patterns and tooling evolve quickly - verify specifics against current vendor documentation.</em></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>Leadership</category>
+  <category>The Executive&#39;s AI Compass</category>
+  <guid>https://vikramggoyal.co/posts/executives-ai-compass-part-3/</guid>
+  <pubDate>Sun, 23 Aug 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>The Executive’s AI Compass - Part 2: The Mechanics of Prompting</title>
   <dc:creator>Vikram Goyal</dc:creator>
   <link>https://vikramggoyal.co/posts/executives-ai-compass-part-2/</link>
   <description><![CDATA[ 
@@ -67,7 +204,7 @@
 <h2 class="anchored" data-anchor-id="part-2-the-mechanics-of-prompting">Part 2: The Mechanics of Prompting</h2>
 <p>Early adopters of LLMs coined a flashy phrase - “prompt engineering”.</p>
 <p>Remember from Part 1, AI models are mathematical probabilistic engines trained on natural language where words are stored in a neighbourhood map. Prompting is directing your AI model to access the correct neighbourhood maps to get you a reliable response.</p>
-<p>An LLM does not think, feel, or intrinsically understand your goals. When you write a prompt, you are not having a casual conversation — you are narrowing the mathematical probabilities of what the model produces next. To bridge the gap between casual chat and predictable corporate output, it helps to understand what happens when a prompt is processed.</p>
+<p>An LLM does not think, feel, or intrinsically understand your goals. When you write a prompt, you are not having a casual conversation - you are narrowing the mathematical probabilities of what the model produces next. To bridge the gap between casual chat and predictable corporate output, it helps to understand what happens when a prompt is processed.</p>
 <p>Worth noting: leading model providers have made prompting far more forgiving than it was in 2023. Clear, well-structured instructions still matter enormously - but the goal today is <em>reliability and repeatability</em>.</p>
 </section>
 <section id="how-a-prompt-works-mechanically" class="level2">
@@ -85,30 +222,30 @@
 <h2 class="anchored" data-anchor-id="the-enterprise-prompt-blueprint">The enterprise prompt blueprint</h2>
 <p>To help your teams build repeatable workflows rather than play guessing games, enforce a consistent structure. A production-grade prompt has four parts:</p>
 <ol type="1">
-<li><strong>Persona — who the model should be acting as in this exercise.</strong> State the role and expertise to assume. <em>Example: “You are a corporate risk auditor specialising in international supply-chain regulation.”</em></li>
-<li><strong>Context and input data — what it needs to know.</strong> Provide the raw material, clearly separated from your instructions using markers or delimiters so the model doesn’t confuse data with commands. <em>Example: <code>[DATA START] …logistics report… [DATA END]</code></em></li>
-<li><strong>Constraints and guardrails — what it must not do.</strong> Set the borders. This is your first line of defence against fabricated information (hallucinations) and scope creep. <em>Example: “Base your analysis strictly on the provided text. If the answer isn’t there, state ‘Data missing’ — do not guess.”</em></li>
-<li><strong>Output specification — how the result should look.</strong> Dictate structure, length, tone, and format so the output slots into your process. <em>Example: “Give a three-bullet executive summary, then a table mapping each risk to its operational impact.”</em></li>
+<li><strong>Persona - who the model should be acting as in this exercise.</strong> State the role and expertise to assume. <em>Example: “You are a corporate risk auditor specialising in international supply-chain regulation.”</em></li>
+<li><strong>Context and input data - what it needs to know.</strong> Provide the raw material, clearly separated from your instructions using markers or delimiters so the model doesn’t confuse data with commands. <em>Example: <code>[DATA START] …logistics report… [DATA END]</code></em></li>
+<li><strong>Constraints and guardrails - what it must not do.</strong> Set the borders. This is your first line of defence against fabricated information (hallucinations) and scope creep. <em>Example: “Base your analysis strictly on the provided text. If the answer isn’t there, state ‘Data missing’ - do not guess.”</em></li>
+<li><strong>Output specification - how the result should look.</strong> Dictate structure, length, tone, and format so the output slots into your process. <em>Example: “Give a three-bullet executive summary, then a table mapping each risk to its operational impact.”</em></li>
 </ol>
 </section>
 <section id="ask-for-the-reasoning-chain-of-thought" class="level2">
 <h2 class="anchored" data-anchor-id="ask-for-the-reasoning-chain-of-thought">Ask for the reasoning: chain-of-thought</h2>
 <p>For anything involving analysis, multi-step logic, or a judgement, one small instruction reliably improves quality: ask the model to <strong>work through its reasoning step by step</strong> before it gives an answer. This is <strong>chain-of-thought</strong> prompting.</p>
-<p>Why it works connects back to Part 1: because the model generates one fragment at a time, forcing it to lay out the intermediate steps gives it a better chance of reaching a sound conclusion — and gives <em>you</em> something to inspect. A bare answer hides its logic; a reasoned one exposes it, so an error becomes visible rather than buried.</p>
-<p>The executive value is twofold. Accuracy on reasoning-heavy tasks improves; and, more importantly for governance, the visible reasoning is auditable — you can see <em>why</em> the model reached a conclusion. One caution: the explanation given by the LLM is a plausible reconstruction, not a literal readout of the model’s internals, so treat it as an aid to scrutiny, not proof of the path the model took.</p>
+<p>Why it works connects back to Part 1: because the model generates one fragment at a time, forcing it to lay out the intermediate steps gives it a better chance of reaching a sound conclusion - and gives <em>you</em> something to inspect. A bare answer hides its logic; a reasoned one exposes it, so an error becomes visible rather than buried.</p>
+<p>The executive value is twofold. Accuracy on reasoning-heavy tasks improves; and, more importantly for governance, the visible reasoning is auditable - you can see <em>why</em> the model reached a conclusion. One caution: the explanation given by the LLM is a plausible reconstruction, not a literal readout of the model’s internals, so treat it as an aid to scrutiny, not proof of the path the model took.</p>
 </section>
 <section id="beyond-instructions-few-shot-prompting" class="level2">
 <h2 class="anchored" data-anchor-id="beyond-instructions-few-shot-prompting">Beyond instructions: few-shot prompting</h2>
 <p>If you want the model to match a specific corporate format or brand voice, telling it what to do is often not enough. You have to <em>show</em> your desired output.</p>
 <p>This is <strong>few-shot prompting</strong>: including two or three examples of ideal input-and-approved-output pairs directly in the prompt. The model infers the pattern from your examples and mirrors the structure and style.[1] For format-sensitive and style-sensitive tasks, adding examples is one of the most reliable ways to lift output quality without touching the model itself.</p>
 <blockquote class="blockquote">
-<p><strong>A note on precision:</strong> You may see confident claims that a technique lifts reliability “from 60% to 95%.” Treat such figures with caution — real gains depend entirely on the task, the model, and how you measure success. The honest, defensible statement is that well-chosen examples <em>substantially and measurably</em> improve consistency on the tasks they fit. Which brings us to the point most prompt guides skip.</p>
+<p><strong>A note on precision:</strong> You may see confident claims that a technique lifts reliability “from 60% to 95%.” Treat such figures with caution - real gains depend entirely on the task, the model, and how you measure success. The honest, defensible statement is that well-chosen examples <em>substantially and measurably</em> improve consistency on the tasks they fit. Which brings us to the point most prompt guides skip.</p>
 </blockquote>
 </section>
 <section id="you-cannot-trust-a-prompt-you-have-not-tested" class="level2">
 <h2 class="anchored" data-anchor-id="you-cannot-trust-a-prompt-you-have-not-tested">You cannot trust a prompt you have not tested</h2>
-<p>A prompt that works once is an anecdote, not a process. Before a prompt anchors anything important, your teams should evaluate it against a small set of representative inputs with known good answers, and re-check it whenever the underlying model is updated, or source data formats are changed — because provider model updates or input data formats can shift behaviour for exactly the same prompts. This habit of systematic verification is the through-line to <em>Diligence</em>, one of the four executive competencies I talk about in Part 5.</p>
-<p><strong>The business impact:</strong> A poorly structured prompt demands rounds of manual correction, draining time and compute. Treated as an engineering artefact — structured, exampled, and tested — a prompt becomes a predictable automation block that integrates cleanly into existing workflows. The difference between the two is the difference between a demo and a dependable process.</p>
+<p>A prompt that works once is an anecdote, not a process. Before a prompt anchors anything important, your teams should evaluate it against a small set of representative inputs with known good answers, and re-check it whenever the underlying model is updated, or source data formats are changed - because provider model updates or input data formats can shift behaviour for exactly the same prompts. This habit of systematic verification is the through-line to <em>Diligence</em>, one of the four executive competencies I talk about in Part 5.</p>
+<p><strong>The business impact:</strong> A poorly structured prompt demands rounds of manual correction, draining time and compute. Treated as an engineering artefact - structured, exampled, and tested - a prompt becomes a predictable automation block that integrates cleanly into existing workflows. The difference between the two is the difference between a demo and a dependable process.</p>
 <hr>
 </section>
 <section id="a-reusable-prompt-template" class="level2">
@@ -123,7 +260,7 @@ font-style: inherit;">system_prompt</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">persona</span>&gt;</span>
-<span id="cb1-4">    Who the AI should act as — role, seniority, domain expertise, point of view.</span>
+<span id="cb1-4">    Who the AI should act as - role, seniority, domain expertise, point of view.</span>
 <span id="cb1-5">    e.g. "A corporate risk auditor specialising in international supply-chain regulation."</span>
 <span id="cb1-6">  &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
@@ -147,7 +284,7 @@ font-style: inherit;">objective</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">audience</span>&gt;</span>
-<span id="cb1-13">      Who will read or use the output, and their level — e.g. "the board; non-technical."</span>
+<span id="cb1-13">      Who will read or use the output, and their level - e.g. "the board; non-technical."</span>
 <span id="cb1-14">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -188,7 +325,7 @@ font-style: inherit;">constraints</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">data_reach</span>&gt;</span>
-<span id="cb1-30">      What the model may and may not draw on —</span>
+<span id="cb1-30">      What the model may and may not draw on -</span>
 <span id="cb1-31">      e.g. "Use ONLY the text in &lt;<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -201,7 +338,7 @@ font-style: inherit;">data_reach</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">fact_checking</span>&gt;</span>
-<span id="cb1-34">      How to handle uncertainty —</span>
+<span id="cb1-34">      How to handle uncertainty -</span>
 <span id="cb1-35">      e.g. "If the answer is not in the data, write 'Data missing'. Do not guess or fabricate."</span>
 <span id="cb1-36">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
@@ -211,7 +348,7 @@ font-style: inherit;">fact_checking</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">scope</span>&gt;</span>
-<span id="cb1-38">      Boundaries — what is out of scope, what not to do, topic or length limits.</span>
+<span id="cb1-38">      Boundaries - what is out of scope, what not to do, topic or length limits.</span>
 <span id="cb1-39">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -220,7 +357,7 @@ font-style: inherit;">scope</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">safety_and_compliance</span>&gt;</span>
-<span id="cb1-41">      Privacy, regulatory, or policy rules —</span>
+<span id="cb1-41">      Privacy, regulatory, or policy rules -</span>
 <span id="cb1-42">      e.g. "Never reveal PII; flag anything needing legal review."</span>
 <span id="cb1-43">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
@@ -240,7 +377,7 @@ font-style: inherit;">optional=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"true"</span>&gt;</span>
 <span id="cb1-47">    For analysis or judgement tasks: "Work through the reasoning step by step, then give the</span>
-<span id="cb1-48">    final answer." (Chain-of-thought — improves accuracy and makes the logic auditable.)</span>
+<span id="cb1-48">    final answer." (Chain-of-thought - improves accuracy and makes the logic auditable.)</span>
 <span id="cb1-49">  &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -305,7 +442,7 @@ font-style: inherit;">sample_output</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">format</span>&gt;</span>
-<span id="cb1-66">      Structure — e.g. "Three-bullet executive summary, then a table of risk → impact."</span>
+<span id="cb1-66">      Structure - e.g. "Three-bullet executive summary, then a table of risk → impact."</span>
 <span id="cb1-67">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -314,7 +451,7 @@ font-style: inherit;">format</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">length</span>&gt;</span>
-<span id="cb1-69">      Size limits — e.g. "Under 200 words" or "one page."</span>
+<span id="cb1-69">      Size limits - e.g. "Under 200 words" or "one page."</span>
 <span id="cb1-70">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -323,7 +460,7 @@ font-style: inherit;">length</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">tone</span>&gt;</span>
-<span id="cb1-72">      Voice and register — e.g. "Formal, precise, board-appropriate; no marketing language."</span>
+<span id="cb1-72">      Voice and register - e.g. "Formal, precise, board-appropriate; no marketing language."</span>
 <span id="cb1-73">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -332,7 +469,7 @@ font-style: inherit;">tone</span>&gt;</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">references</span>&gt;</span>
-<span id="cb1-75">      Whether and how to cite — e.g. "Cite the source line for every claim, as [Doc, p.3]."</span>
+<span id="cb1-75">      Whether and how to cite - e.g. "Cite the source line for every claim, as [Doc, p.3]."</span>
 <span id="cb1-76">    &lt;/<span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -351,17 +488,17 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <section id="key-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Start from the <strong>reusable prompt template above</strong> — fill each tag, and delete the optional ones you don’t need.</li>
-<li>Prompting is <strong>programming a probabilistic system in natural language</strong> — structure narrows the output.</li>
+<li>Start from the <strong>reusable prompt template above</strong> - fill each tag, and delete the optional ones you don’t need.</li>
+<li>Prompting is <strong>programming a probabilistic system in natural language</strong> - structure narrows the output.</li>
 <li>A production prompt has four parts: <strong>persona, context/data, constraints, output specification.</strong></li>
 <li>For reasoning tasks, ask for step-by-step reasoning (<strong>chain-of-thought</strong>); to match a format or voice, show 2–3 examples (<strong>few-shot</strong>).</li>
-<li>A prompt isn’t trusted until it’s <strong>tested</strong> against known-good cases — and re-tested whenever the model updates or data format changes.</li>
+<li>A prompt isn’t trusted until it’s <strong>tested</strong> against known-good cases - and re-tested whenever the model updates or data format changes.</li>
 </ul>
 </section>
 <section id="your-onboarding-status" class="level2">
 <h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
-<p>You now know that the consistency of an AI’s output depends chiefly on the structure of its input — and that a prompt earns trust only once it has been tested. You can look at a team’s prompt and diagnose why a system is giving erratic answers.</p>
-<p>But individual prompts, however well-engineered, still depend on a human pressing “enter” every time. To scale automation, we connect these prompt blocks into automated ecosystems — and give them access to your live, proprietary data.</p>
+<p>You now know that the consistency of an AI’s output depends chiefly on the structure of its input - and that a prompt earns trust only once it has been tested. You can look at a team’s prompt and diagnose why a system is giving erratic answers.</p>
+<p>But individual prompts, however well-engineered, still depend on a human pressing “enter” every time. To scale automation, we connect these prompt blocks into automated ecosystems - and give them access to your live, proprietary data.</p>
 <p>In <strong>Part 3: The Dawn of Agentic AI</strong>, we move past single prompts into environments where specialised AI components retrieve real data, cooperate, check one another, and execute multi-step business goals with a human firmly in the loop.</p>
 <hr>
 <section id="references" class="level3">
@@ -369,7 +506,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <ol type="1">
 <li><span id="ref-1"></span>Brown, T. et al.&nbsp;(2020). “Language Models are Few-Shot Learners.” <a href="https://arxiv.org/abs/2005.14165" class="uri">https://arxiv.org/abs/2005.14165</a> <em>(The foundational demonstration that in-context examples improve task performance.)</em></li>
 </ol>
-<p><em>This article is educational and does not constitute legal or financial advice. Model behaviours change frequently — verify specifics against current vendor documentation and test prompts on your own data.</em></p>
+<p><em>This article is educational and does not constitute legal or financial advice. Model behaviours change frequently - verify specifics against current vendor documentation and test prompts on your own data.</em></p>
 
 
 </section>
@@ -384,7 +521,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
   <media:content url="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>The Executive’s AI Compass — Part 1: Demystifying the Digital Brain</title>
+  <title>The Executive’s AI Compass - Part 1: Demystifying the Digital Brain</title>
   <dc:creator>Vikram Goyal</dc:creator>
   <link>https://vikramggoyal.co/posts/executives-ai-compass-part-1/</link>
   <description><![CDATA[ 
@@ -425,24 +562,24 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <section id="the-eight-part-series-map" class="level2">
 <h2 class="anchored" data-anchor-id="the-eight-part-series-map">The eight-part series map</h2>
 <ul>
-<li><strong>Part 1: Demystifying the Digital Brain</strong> — the foundational building blocks: tokens, word maps, memory, parameters, and creativity.</li>
-<li><strong>Part 2: The Mechanics of Prompting</strong> — how instructions translate into outputs, and how to engineer reliable prompts.</li>
-<li><strong>Part 3: The Dawn of Agentic AI</strong> — moving beyond a chat box into automated, data-grounded workflows.</li>
-<li><strong>Part 4: Architectural Fluency</strong> — evaluating vendors, custom builds, cloud service models, regulation, and governance guardrails.</li>
-<li><strong>Part 5: Leading Enterprise AI Projects</strong> — a fluency framework, an execution playbook, value measurement, and managing human friction.</li>
-<li><strong>Part 6: The Operating Model</strong> — the talent, roles, and organisational structure that turn individual fluency into institutional capability.</li>
-<li><strong>Part 7: The Data Foundation</strong> — the data culture, quality, readiness, and strategy that everything else depends on.</li>
-<li><strong>Part 8: When AI Joins the Management System</strong> — algorithmic management, human-plus-machine “superminds,” and how leadership itself changes.</li>
-<li><strong>Bonus: Downloadable Artefacts for Leading AI Projects</strong> — one-page ready reckoners plus a full AI-project implementation checklist.</li>
+<li><strong>Part 1: Demystifying the Digital Brain</strong> - the foundational building blocks: tokens, word maps, memory, parameters, and creativity.</li>
+<li><strong>Part 2: The Mechanics of Prompting</strong> - how instructions translate into outputs, and how to engineer reliable prompts.</li>
+<li><strong>Part 3: The Dawn of Agentic AI</strong> - moving beyond a chat box into automated, data-grounded workflows.</li>
+<li><strong>Part 4: Architectural Fluency</strong> - evaluating vendors, custom builds, cloud service models, regulation, and governance guardrails.</li>
+<li><strong>Part 5: Leading Enterprise AI Projects</strong> - a fluency framework, an execution playbook, value measurement, and managing human friction.</li>
+<li><strong>Part 6: The Operating Model</strong> - the talent, roles, and organisational structure that turn individual fluency into institutional capability.</li>
+<li><strong>Part 7: The Data Foundation</strong> - the data culture, quality, readiness, and strategy that everything else depends on.</li>
+<li><strong>Part 8: When AI Joins the Management System</strong> - algorithmic management, human-plus-machine “superminds,” and how leadership itself changes.</li>
+<li><strong>Bonus: Downloadable Artefacts for Leading AI Projects</strong> - one-page ready reckoners plus a full AI-project implementation checklist.</li>
 </ul>
 <hr>
 </section>
 <section id="part-1-demystifying-the-digital-brain" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-demystifying-the-digital-brain">Part 1: Demystifying the Digital Brain</h2>
 <p>If you ask a consultant how a Large Language Model (LLM) works, you will likely get a slide deck of academic jargon that could become overwhelming. One thing we do know, AI is not a mystical mind or a sentient being (not yet!). Reframe your mind to view AI for what it is: a hyper-sophisticated prediction engine that, for example, given a stretch of text, <strong>estimates the most probable next fragment</strong> - and does so repeatedly, one fragment at a time.</p>
-<p>A quick but important scoping note: this series concentrates on <strong>generative AI</strong> (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly <strong>multimodal</strong> — the same underlying approach now extends to images, audio, and video — but the mechanics below are the right mental model for the language-based tools most executives will govern first.</p>
+<p>A quick but important scoping note: this series concentrates on <strong>generative AI</strong> (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly <strong>multimodal</strong> - the same underlying approach now extends to images, audio, and video - but the mechanics below are the right mental model for the language-based tools most executives will govern first.</p>
 <p>To visualise how data moves through this engine, look at the core interaction loop:</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop — query in, model predicts the next fragment, response added to the context window"></p>
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"></p>
 <p>To sit confidently at the table with your technical partners, you need five foundational concepts.</p>
 <section id="tokens-the-raw-building-blocks" class="level3">
 <h3 class="anchored" data-anchor-id="tokens-the-raw-building-blocks">1. Tokens: the raw building blocks</h3>
@@ -451,24 +588,24 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <li>A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.[1] The exact split depends on the model’s tokeniser, so treat this as an estimate, not a law.</li>
 <li>The model uses a built-in vocabulary to map each fragment to a specific token ID.</li>
 </ul>
-<p>For example, a phrase like “AI-driven transformation” is split into several fragments, each mapped to a number (e.g., something of the form <code>&lt;15592&gt; &lt;27233&gt; &lt;11030&gt; &lt;276&gt;</code>). <em>These specific numbers are illustrative — the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.</em></p>
+<p>For example, a phrase like “AI-driven transformation” is split into several fragments, each mapped to a number (e.g., something of the form <code>&lt;15592&gt; &lt;27233&gt; &lt;11030&gt; &lt;276&gt;</code>). <em>These specific numbers are illustrative - the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.</em></p>
 <p><strong>The business impact:</strong> Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.[1] Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so <strong>prompt discipline is a genuine cost lever.</strong></p>
 </section>
 <section id="pre-training-the-digital-neighbourhood-map" class="level3">
 <h3 class="anchored" data-anchor-id="pre-training-the-digital-neighbourhood-map">2. Pre-training: the digital neighbourhood map</h3>
-<p>How does the model “understand” meaning? During <strong>pre-training</strong>, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together — as if grouped into neighbourhoods.</p>
+<p>How does the model “understand” meaning? During <strong>pre-training</strong>, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together - as if grouped into neighbourhoods.</p>
 <p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="img-fluid" alt="2. Pre-training: the digital neighbourhood map"></p>
 <p>Because <em>cat</em>, <em>tiger</em>, and <em>lion</em> sit close together, the model treats them as related; <em>stock</em> sits far away. When choosing the next token, the model uses this learned geometry to favour words from the relevant region.</p>
 <p><strong>The business impact:</strong> A base model is, in effect, a world-class autocomplete built on public text. It does <strong>not</strong> know your proprietary data, your internal policies, or last week’s events. Expecting a raw model to solve your specific corporate problems out of the box will be like hiring a brilliant graduate and giving them zero onboarding. (In Part 3 and Part 4, I cover how you supply that missing context safely.)</p>
 </section>
 <section id="the-context-window-the-short-term-storage-desk" class="level3">
 <h3 class="anchored" data-anchor-id="the-context-window-the-short-term-storage-desk">3. The context window: the short-term storage desk</h3>
-<p>An LLM’s <strong>context window</strong> is its <strong>working memory</strong> for a single conversation — the buffer “storage desk” between you and the model, holding your prompt plus everything exchanged so far between you and the AI model.</p>
+<p>An LLM’s <strong>context window</strong> is its <strong>working memory</strong> for a single conversation - the buffer “storage desk” between you and the model, holding your prompt plus everything exchanged so far between you and the AI model.</p>
 <ul>
 <li>Early models had small storage desks (a few pages of text).</li>
 <li>Modern enterprise models have large storage desks, letting you drop in lengthy contracts or ledgers within a single prompt.</li>
 </ul>
-<p><strong>The business impact:</strong> If your team feeds the model more than the desk holds, it <strong><em>typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.</em></strong> Worse, models can also lose track of information buried in the <em>middle</em> of a very long input.[2] Managing what goes on the desk - and where - is critical to avoiding silent blind spots.</p>
+<p><strong>The business impact:</strong> If your team feeds the model more than the desk holds, it <strong><em>typically does not error out - it summarises the oldest content, retains only the summary, and drops the details.</em></strong> Worse, models can also lose track of information buried in the <em>middle</em> of a very long input.[2] Managing what goes on the desk - and where - is critical to avoiding silent blind spots.</p>
 </section>
 <section id="parameters-and-weights-the-knobs-of-knowledge" class="level3">
 <h3 class="anchored" data-anchor-id="parameters-and-weights-the-knobs-of-knowledge">4. Parameters and weights: the knobs of knowledge</h3>
@@ -479,19 +616,19 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <h3 class="anchored" data-anchor-id="temperature-dialling-creativity-vs.-predictability">5. Temperature: dialling creativity vs.&nbsp;predictability</h3>
 <p>Many AI tools expose a <strong>temperature</strong> setting that governs how much <em>randomness</em> the model injects when choosing the next token. Lower means more predictable; higher means more varied.</p>
 <ul>
-<li><strong>Low temperature:</strong> strict and repeatable — the model favours the safest, most obvious continuations.</li>
-<li><strong>High temperature:</strong> more exploratory and creative — the model is willing to take less likely paths.</li>
+<li><strong>Low temperature:</strong> strict and repeatable - the model favours the safest, most obvious continuations.</li>
+<li><strong>High temperature:</strong> more exploratory and creative - the model is willing to take less likely paths.</li>
 </ul>
 <p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></p>
-<p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable — check your AI model provider’s documentation.[3] The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
-<p><strong>The business impact:</strong> The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic — the same prompt can yield slightly different answers on different runs.</p>
+<p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable - check your AI model provider’s documentation.[3] The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
+<p><strong>The business impact:</strong> The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic - the same prompt can yield slightly different answers on different runs.</p>
 <hr>
 </section>
 </section>
-<section id="a-crucial-distinction-generative-predictive-and-reinforcement-learning" class="level2">
-<h2 class="anchored" data-anchor-id="a-crucial-distinction-generative-predictive-and-reinforcement-learning">A crucial distinction: generative, predictive — and reinforcement learning</h2>
-<p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:[4] the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> — with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive — and reinforcement learning"></p>
+<section id="a-crucial-distinction-generative-predictive---and-reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="a-crucial-distinction-generative-predictive---and-reinforcement-learning">A crucial distinction: generative, predictive - and reinforcement learning</h2>
+<p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:[4] the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> - with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive - and reinforcement learning"></p>
 <ul>
 <li><strong>Generative AI</strong> works with unstructured language, text, and code. It <em>creates</em> new content, and its output is inherently variable. It excels at summarising, drafting, writing code, and orchestrating agentic workflows. It is not a calculator.</li>
 <li><strong>Predictive AI</strong> works with structured tables and statistical history. It <em>estimates a specific quantity or label</em> - a churn probability, a credit-risk score, next month’s demand, a <strong>fraud</strong> flag, or a <strong>predictive-maintenance</strong> warning that a machine is about to fail. Predictive models are <strong>not</strong> simply “deterministic.” They produce calibrated probabilities and can be uncertain; the real distinction is the type of data and the type of output, not certainty versus creativity.</li>
@@ -501,7 +638,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 Generative AI’s technical moat is in the breadth - unstructured, creative, language-heavy work at scale - and its risk is variability and hallucination, which makes validation harder.<br>
 Predictive AI’s strength is precision - a measurable answer to a specific, narrow question - and its risks are that it needs volumes of clean historical data, which means it can inherit that history’s biases, and only answers what it was trained to.<br>
 Matching the engine to the problem is therefore also matching each one’s risk profile to the stakes.</p>
-<p>Waste usually starts here — forcing a conversational LLM to compute next quarter’s inventory, or commissioning a bespoke statistical model to do work a generative assistant could handle. Match the problem to the correct engine. Increasingly, the two are combined inside a single workflow (predict, then generate), which makes knowing the difference more useful, not less.</p>
+<p>Waste usually starts here - forcing a conversational LLM to compute next quarter’s inventory, or commissioning a bespoke statistical model to do work a generative assistant could handle. Match the problem to the correct engine. Increasingly, the two are combined inside a single workflow (predict, then generate), which makes knowing the difference more useful, not less.</p>
 <hr>
 </section>
 <section id="how-to-apply-this" class="level2">
@@ -510,7 +647,7 @@ Matching the engine to the problem is therefore also matching each one’s risk 
 <li><p>In your next AI discussion, ask three sizing questions:<br>
 <em>Which model size (and token cost) does this task actually need?</em><br>
 <em>Is it grounded in our data or leaning on public pre-training?</em><br>
-<em>Is the temperature right — low for finance and compliance, higher for ideation?</em></p></li>
+<em>Is the temperature right - low for finance and compliance, higher for ideation?</em></p></li>
 <li><p>When someone proposes AI for a numeric forecast or a risk score, check whether it is really a <strong>predictive</strong> job, not a <strong>generative</strong> one - <strong><em>matching the engine to the problem is the cheapest decision you will make.</em></strong></p></li>
 </ul>
 </section>
@@ -520,13 +657,13 @@ Matching the engine to the problem is therefore also matching each one’s risk 
 <li>An LLM is a <strong>text-prediction engine</strong>, not a mind - it predicts the next fragment, one at a time.</li>
 <li>Five levers govern its cost and behaviour: <strong>tokens</strong> (cost), <strong>context window</strong> (memory), <strong>parameters</strong> (size vs.&nbsp;cost), <strong>temperature</strong> (creativity), and <strong>pre-training</strong> (it knows public data, not yours).</li>
 <li>Match the engine to the problem: <strong>generative</strong> creates from unstructured input; <strong>predictive</strong> estimates from structured history; <strong>reinforcement learning</strong> learns by reward.</li>
-<li>The model is only ever as good as the <strong>data</strong> beneath it — we’ll explore this topic in Part 7.</li>
+<li>The model is only ever as good as the <strong>data</strong> beneath it - we’ll explore this topic in Part 7.</li>
 </ul>
 </section>
 <section id="your-onboarding-status" class="level2">
 <h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
 <p>Understanding these five levers and the toolkit’s three families does not make you an expert, nor ready to architect a full rollout. What it does give you is a shield against hyperbole and the vocabulary to ask sharp questions about cost, predictability, and memory limits. You are no longer guessing in the dark.</p>
-<p>One foundation we have only gestured at — and will return to in Parts 4 and 5, then address in full in Part 7 — is <strong>your data</strong>. Ever heard of <strong><em>“Garbage In - Garbage Out”</em></strong>? It cannot be stressed enough that the value of these tools depends on the quality, accessibility, and governance of the data you feed them. Keep the back of your mind as we proceed.</p>
+<p>One foundation we have only gestured at - and will return to in Parts 4 and 5, then address in full in Part 7 - is <strong>your data</strong>. Ever heard of <strong><em>“Garbage In - Garbage Out”</em></strong>? It cannot be stressed enough that the value of these tools depends on the quality, accessibility, and governance of the data you feed them. Keep the back of your mind as we proceed.</p>
 <p>Next, we look at your primary steering wheel: how you actually talk to the machine to get reliable results. In <strong>Part 2: The Mechanics of Prompting</strong>, we move from casual chat to strict, repeatable instructions that can safely anchor a business process.</p>
 <hr>
 <section id="references" class="level3">
@@ -537,7 +674,7 @@ Matching the engine to the problem is therefore also matching each one’s risk 
 <li><p><span id="ref-3"></span>Anthropic API documentation and OpenAI API reference (temperature parameter ranges and defaults). <a href="https://platform.claude.com/docs/en/api/" class="uri">https://platform.claude.com/docs/en/api/</a>; <a href="https://developers.openai.com/api/reference/resources/responses/methods/create" class="uri">https://developers.openai.com/api/reference/resources/responses/methods/create</a> <em>(Confirm the current range for your specific model.)</em></p></li>
 <li><p><span id="ref-4"></span>Ramakrishnan, R. “When to Use GenAI Versus Predictive AI.” <em>MIT Sloan Management Review.</em> <a href="https://sloanreview.mit.edu/article/when-to-use-genai-versus-predictive-ai/">sloanreview.mit.edu/article/when-to-use-genai-versus-predictive-ai/</a></p></li>
 </ol>
-<p><em>This article is educational and does not constitute legal, consulting, or financial advice. Product behaviours, pricing, and parameter ranges change frequently — verify specifics against current vendor documentation.</em></p>
+<p><em>This article is educational and does not constitute legal, consulting, or financial advice. Product behaviours, pricing, and parameter ranges change frequently - verify specifics against current vendor documentation.</em></p>
 
 
 </section>
