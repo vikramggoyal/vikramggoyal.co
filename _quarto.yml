@@ -13,6 +13,8 @@ website:
   title: "Vikram G Goyal"
   description: "Deterministic expectations in a Stochastic life"
   site-url: https://vikramggoyal.co
+  twitter-card: true
+  open-graph: true
   navbar:
     left:
       - href: index.qmd

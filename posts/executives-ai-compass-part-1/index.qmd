@@ -1,6 +1,6 @@
 ---
-title: "The Executive's AI Compass — Part 1: Demystifying the Digital Brain"
-description: "The foundational building blocks of an LLM for leaders: tokens, word maps, memory, parameters, and creativity — plus how to match the right AI engine to the problem."
+title: "The Executive's AI Compass - Part 1: Demystifying the Digital Brain"
+description: "The foundational building blocks of an LLM for leaders: tokens, word maps, memory, parameters, and creativity - plus how to match the right AI engine to the problem."
 author: "Vikram Goyal"
 date: "2026-08-08"
 categories: ["AI", "Leadership", "The Executive's AI Compass"]
@@ -11,15 +11,7 @@ format:
     output-file: executives-ai-compass-part-1
     include-before-body:
       text: |
-        #let article-url = "vikramggoyal.co/posts/executives-ai-compass-part-1/"
-        #set page(footer: context {
-          set text(size: 8pt, fill: luma(140))
-          grid(
-            columns: (1fr, 1fr),
-            align(left)[vikramggoyal.co],
-            align(right)[#link("https://" + article-url)[#article-url]],
-          )
-        })
+        #set page(footer: footer-content("vikramggoyal.co/posts/executives-ai-compass-part-1/"))
 ---
 
 {{< include /_includes/_post-header.qmd >}}
@@ -32,15 +24,15 @@ This eight-part series of standalone articles is my attempt to provide fundament
 
 ## The eight-part series map
 
-- **Part 1: Demystifying the Digital Brain** — the foundational building blocks: tokens, word maps, memory, parameters, and creativity.
-- **Part 2: The Mechanics of Prompting** — how instructions translate into outputs, and how to engineer reliable prompts.
-- **Part 3: The Dawn of Agentic AI** — moving beyond a chat box into automated, data-grounded workflows.
-- **Part 4: Architectural Fluency** — evaluating vendors, custom builds, cloud service models, regulation, and governance guardrails.
-- **Part 5: Leading Enterprise AI Projects** — a fluency framework, an execution playbook, value measurement, and managing human friction.
-- **Part 6: The Operating Model** — the talent, roles, and organisational structure that turn individual fluency into institutional capability.
-- **Part 7: The Data Foundation** — the data culture, quality, readiness, and strategy that everything else depends on.
-- **Part 8: When AI Joins the Management System** — algorithmic management, human-plus-machine "superminds," and how leadership itself changes.
-- **Bonus: Downloadable Artefacts for Leading AI Projects** — one-page ready reckoners plus a full AI-project implementation checklist.
+- **Part 1: Demystifying the Digital Brain** - the foundational building blocks: tokens, word maps, memory, parameters, and creativity.
+- **Part 2: The Mechanics of Prompting** - how instructions translate into outputs, and how to engineer reliable prompts.
+- **Part 3: The Dawn of Agentic AI** - moving beyond a chat box into automated, data-grounded workflows.
+- **Part 4: Architectural Fluency** - evaluating vendors, custom builds, cloud service models, regulation, and governance guardrails.
+- **Part 5: Leading Enterprise AI Projects** - a fluency framework, an execution playbook, value measurement, and managing human friction.
+- **Part 6: The Operating Model** - the talent, roles, and organisational structure that turn individual fluency into institutional capability.
+- **Part 7: The Data Foundation** - the data culture, quality, readiness, and strategy that everything else depends on.
+- **Part 8: When AI Joins the Management System** - algorithmic management, human-plus-machine "superminds," and how leadership itself changes.
+- **Bonus: Downloadable Artefacts for Leading AI Projects** - one-page ready reckoners plus a full AI-project implementation checklist.
 
 ---
 
@@ -48,11 +40,11 @@ This eight-part series of standalone articles is my attempt to provide fundament
 
 If you ask a consultant how a Large Language Model (LLM) works, you will likely get a slide deck of academic jargon that could become overwhelming. One thing we do know, AI is not a mystical mind or a sentient being (not yet!). Reframe your mind to view AI for what it is: a hyper-sophisticated prediction engine that, for example, given a stretch of text, **estimates the most probable next fragment** - and does so repeatedly, one fragment at a time.
 
-A quick but important scoping note: this series concentrates on **generative AI** (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly **multimodal** — the same underlying approach now extends to images, audio, and video — but the mechanics below are the right mental model for the language-based tools most executives will govern first.
+A quick but important scoping note: this series concentrates on **generative AI** (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly **multimodal** - the same underlying approach now extends to images, audio, and video - but the mechanics below are the right mental model for the language-based tools most executives will govern first.
 
 To visualise how data moves through this engine, look at the core interaction loop:
 
-![](img-p1-1-to-visualise-how-data-moves-through-this-e.jpg){fig-alt="Diagram: the LLM interaction loop — query in, model predicts the next fragment, response added to the context window"}
+![](img-p1-1-to-visualise-how-data-moves-through-this-e.jpg){fig-alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"}
 
 To sit confidently at the table with your technical partners, you need five foundational concepts.
 
@@ -63,13 +55,13 @@ AI models do not read text the way humans do. They chop text into fragments call
 - A useful rule of thumb for English language is that one token is roughly four characters, or about three-quarters of a word.[[1]](#ref-1){.refmark} The exact split depends on the model's tokeniser, so treat this as an estimate, not a law.
 - The model uses a built-in vocabulary to map each fragment to a specific token ID.
 
-For example, a phrase like "AI-driven transformation" is split into several fragments, each mapped to a number (e.g., something of the form `<15592> <27233> <11030> <276>`). *These specific numbers are illustrative — the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.*
+For example, a phrase like "AI-driven transformation" is split into several fragments, each mapped to a number (e.g., something of the form `<15592> <27233> <11030> <276>`). *These specific numbers are illustrative - the real IDs vary by tokeniser and are not meaningful to a business reader; the point is simply that text becomes numbers.*
 
 **The business impact:** Tokens are the unit of AI economics. Most providers charge by the number of tokens processed - both what you send in and what the model generates.[[1]](#ref-1){.refmark} Bloated, poorly structured prompts and oversized documents translate directly into higher bills, so **prompt discipline is a genuine cost lever.**
 
 ### 2. Pre-training: the digital neighbourhood map
 
-How does the model "understand" meaning? During **pre-training**, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together — as if grouped into neighbourhoods.
+How does the model "understand" meaning? During **pre-training**, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together - as if grouped into neighbourhoods.
 
 ![](img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg){fig-alt="2. Pre-training: the digital neighbourhood map"}
 
@@ -79,12 +71,12 @@ Because *cat*, *tiger*, and *lion* sit close together, the model treats them as 
 
 ### 3. The context window: the short-term storage desk
 
-An LLM's **context window** is its **working memory** for a single conversation — the buffer "storage desk" between you and the model, holding your prompt plus everything exchanged so far between you and the AI model.
+An LLM's **context window** is its **working memory** for a single conversation - the buffer "storage desk" between you and the model, holding your prompt plus everything exchanged so far between you and the AI model.
 
 - Early models had small storage desks (a few pages of text).
 - Modern enterprise models have large storage desks, letting you drop in lengthy contracts or ledgers within a single prompt.
 
-**The business impact:** If your team feeds the model more than the desk holds, it ***typically does not error out — it summarises the oldest content, retains only the summary, and drops the details.*** Worse, models can also lose track of information buried in the *middle* of a very long input.[[2]](#ref-2){.refmark} Managing what goes on the desk - and where - is critical to avoiding silent blind spots.
+**The business impact:** If your team feeds the model more than the desk holds, it ***typically does not error out - it summarises the oldest content, retains only the summary, and drops the details.*** Worse, models can also lose track of information buried in the *middle* of a very long input.[[2]](#ref-2){.refmark} Managing what goes on the desk - and where - is critical to avoiding silent blind spots.
 
 ### 4. Parameters and weights: the knobs of knowledge
 
@@ -96,23 +88,23 @@ A model's scale is measured in **parameters** - the internal connections learned
 
 Many AI tools expose a **temperature** setting that governs how much *randomness* the model injects when choosing the next token. Lower means more predictable; higher means more varied.
 
-- **Low temperature:** strict and repeatable — the model favours the safest, most obvious continuations.
-- **High temperature:** more exploratory and creative — the model is willing to take less likely paths.
+- **Low temperature:** strict and repeatable - the model favours the safest, most obvious continuations.
+- **High temperature:** more exploratory and creative - the model is willing to take less likely paths.
 
 ![](img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg){fig-alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"}
 
-*A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn't portable — check your AI model provider's documentation.[[3]](#ref-3){.refmark} The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.*
+*A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn't portable - check your AI model provider's documentation.[[3]](#ref-3){.refmark} The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.*
 
 
-**The business impact:** The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic — the same prompt can yield slightly different answers on different runs.
+**The business impact:** The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic - the same prompt can yield slightly different answers on different runs.
 
 ---
 
-## A crucial distinction: generative, predictive — and reinforcement learning
+## A crucial distinction: generative, predictive - and reinforcement learning
 
-Before moving on, master one line that MIT Sloan Management Review calls a matter of "matching the technology to the specific business problem":[[4]](#ref-4){.refmark} the difference between **generative AI** and **predictive AI** — with a third family, **reinforcement learning**, worth recognising to complete the picture.
+Before moving on, master one line that MIT Sloan Management Review calls a matter of "matching the technology to the specific business problem":[[4]](#ref-4){.refmark} the difference between **generative AI** and **predictive AI** - with a third family, **reinforcement learning**, worth recognising to complete the picture.
 
-![](img-p1-4-a-crucial-distinction-generative-predictiv.jpg){fig-alt="A crucial distinction: generative, predictive — and reinforcement learning"}
+![](img-p1-4-a-crucial-distinction-generative-predictiv.jpg){fig-alt="A crucial distinction: generative, predictive - and reinforcement learning"}
 
 - **Generative AI** works with unstructured language, text, and code. It *creates* new content, and its output is inherently variable. It excels at summarising, drafting, writing code, and orchestrating agentic workflows. It is not a calculator.
 - **Predictive AI** works with structured tables and statistical history. It *estimates a specific quantity or label* - a churn probability, a credit-risk score, next month's demand, a **fraud** flag, or a **predictive-maintenance** warning that a machine is about to fail. Predictive models are **not** simply "deterministic." They produce calibrated probabilities and can be uncertain; the real distinction is the type of data and the type of output, not certainty versus creativity.
@@ -123,7 +115,7 @@ Generative AI's technical moat is in the breadth - unstructured, creative, langu
 Predictive AI's strength is precision - a measurable answer to a specific, narrow question - and its risks are that it needs volumes of clean historical data, which means it can inherit that history's biases, and only answers what it was trained to.  
 Matching the engine to the problem is therefore also matching each one's risk profile to the stakes.
 
-Waste usually starts here — forcing a conversational LLM to compute next quarter's inventory, or commissioning a bespoke statistical model to do work a generative assistant could handle. Match the problem to the correct engine. Increasingly, the two are combined inside a single workflow (predict, then generate), which makes knowing the difference more useful, not less.
+Waste usually starts here - forcing a conversational LLM to compute next quarter's inventory, or commissioning a bespoke statistical model to do work a generative assistant could handle. Match the problem to the correct engine. Increasingly, the two are combined inside a single workflow (predict, then generate), which makes knowing the difference more useful, not less.
 
 ---
 
@@ -132,7 +124,7 @@ Waste usually starts here — forcing a conversational LLM to compute next quart
 - In your next AI discussion, ask three sizing questions:  
   *Which model size (and token cost) does this task actually need?*  
   *Is it grounded in our data or leaning on public pre-training?*  
-  *Is the temperature right — low for finance and compliance, higher for ideation?*
+  *Is the temperature right - low for finance and compliance, higher for ideation?*
 
 - When someone proposes AI for a numeric forecast or a risk score, check whether it is really a **predictive** job, not a **generative** one - ***matching the engine to the problem is the cheapest decision you will make.***
 
@@ -141,13 +133,13 @@ Waste usually starts here — forcing a conversational LLM to compute next quart
 - An LLM is a **text-prediction engine**, not a mind - it predicts the next fragment, one at a time.
 - Five levers govern its cost and behaviour: **tokens** (cost), **context window** (memory), **parameters** (size vs. cost), **temperature** (creativity), and **pre-training** (it knows public data, not yours).
 - Match the engine to the problem: **generative** creates from unstructured input; **predictive** estimates from structured history; **reinforcement learning** learns by reward.
-- The model is only ever as good as the **data** beneath it — we'll explore this topic in Part 7.
+- The model is only ever as good as the **data** beneath it - we'll explore this topic in Part 7.
 
 ## Your onboarding status
 
 Understanding these five levers and the toolkit's three families does not make you an expert, nor ready to architect a full rollout. What it does give you is a shield against hyperbole and the vocabulary to ask sharp questions about cost, predictability, and memory limits. You are no longer guessing in the dark.
 
-One foundation we have only gestured at — and will return to in Parts 4 and 5, then address in full in Part 7 — is **your data**. Ever heard of ***"Garbage In - Garbage Out"***? It cannot be stressed enough that the value of these tools depends on the quality, accessibility, and governance of the data you feed them. Keep the back of your mind as we proceed.
+One foundation we have only gestured at - and will return to in Parts 4 and 5, then address in full in Part 7 - is **your data**. Ever heard of ***"Garbage In - Garbage Out"***? It cannot be stressed enough that the value of these tools depends on the quality, accessibility, and governance of the data you feed them. Keep the back of your mind as we proceed.
 
 Next, we look at your primary steering wheel: how you actually talk to the machine to get reliable results. In **Part 2: The Mechanics of Prompting**, we move from casual chat to strict, repeatable instructions that can safely anchor a business process.
 
@@ -163,4 +155,4 @@ Next, we look at your primary steering wheel: how you actually talk to the machi
 
 4. []{#ref-4}Ramakrishnan, R. "When to Use GenAI Versus Predictive AI." *MIT Sloan Management Review.* [sloanreview.mit.edu/article/when-to-use-genai-versus-predictive-ai/](https://sloanreview.mit.edu/article/when-to-use-genai-versus-predictive-ai/)
 
-*This article is educational and does not constitute legal, consulting, or financial advice. Product behaviours, pricing, and parameter ranges change frequently — verify specifics against current vendor documentation.*
+*This article is educational and does not constitute legal, consulting, or financial advice. Product behaviours, pricing, and parameter ranges change frequently - verify specifics against current vendor documentation.*
