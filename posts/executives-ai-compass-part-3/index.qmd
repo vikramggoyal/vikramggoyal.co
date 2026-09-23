@@ -3,7 +3,7 @@ title: "The Executive's AI Compass - Part 3: The Dawn of Agentic AI"
 description: "Moving beyond the chat box: how Retrieval-Augmented Generation grounds a model in your data, and how agents, orchestration, and human hand-offs turn prompts into automated, data-grounded workflows."
 author: "Vikram Goyal"
 date: "2026-08-23"
-categories: ["AI", "Leadership", "The Executive's AI Compass"]
+categories: ["AI", "Leadership", "The Executive's AI Compass", "RAG"]
 image: img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg
 toc: true
 format:
