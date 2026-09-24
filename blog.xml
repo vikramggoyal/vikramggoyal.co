@@ -10,7 +10,199 @@
 <atom:link href="https://vikramggoyal.co/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Deterministic expectations in a Stochastic life</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sun, 23 Aug 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 29 Aug 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>The Executive’s AI Compass - Part 4: Architectural Fluency</title>
+  <dc:creator>Vikram Goyal</dc:creator>
+  <link>https://vikramggoyal.co/posts/executives-ai-compass-part-4/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="post-header no-print">
+<div class="post-header__byline">
+<p><span class="post-header__date">August 29, 2026</span> | Vikram Goyal</p>
+</div>
+<div class="post-toolbar" aria-label="Post actions">
+  <button type="button" class="post-toolbar__btn" data-action="print" onclick="window.print()" title="Print">
+    <span>Print</span>
+  </button>
+  <a class="post-toolbar__btn" data-action="pdf" id="pdf-download-btn" href="index.pdf" download="" title="Download as PDF">
+    <span>Download</span>
+  </a>
+</div>
+<script>
+(function () {
+  // Derive the PDF filename from the post slug (the containing folder name in the URL).
+  var btn = document.getElementById('pdf-download-btn');
+  if (!btn) return;
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'posts') {
+    btn.href = slug + '.pdf';
+    btn.download = slug + '.pdf';
+  }
+})();
+</script>
+</div>
+<p><em>Views are my own, not those of my employer or clients. Some specifics (model names, regulations) may date over time.</em></p>
+<p>In Part 3 we made the jump from single prompts to autonomous, RAG-grounded agentic pipelines - where specialised agents cooperate, draw on your internal knowledge, and handle heavy workflows while a human stays accountable.</p>
+<p><strong>The series map:</strong></p>
+<ul>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-1/">Part 1: Demystifying the Digital Brain</a></strong></li>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-2/">Part 2: The Mechanics of Prompting</a></strong></li>
+<li><strong><a href="https://vikramggoyal.co/posts/executives-ai-compass-part-3/">Part 3: The Dawn of Agentic AI</a></strong></li>
+<li><strong>Part 4: Architectural Fluency</strong> <em>(you are here)</em></li>
+<li><strong>Part 5: Leading Enterprise AI Projects</strong></li>
+<li><strong>Part 6: The Operating Model</strong></li>
+<li><strong>Part 7: The Data Foundation</strong></li>
+<li><strong>Part 8: When AI Joins the Management System</strong></li>
+<li><strong>Bonus: Downloadable Artefacts for Leading AI Projects</strong></li>
+</ul>
+<p>Now that you know what the technology can do, you face a different bottleneck: how do you buy, build, and govern it safely - and legally? That requires <strong>architectural fluency</strong>.</p>
+<hr>
+<section id="part-4-architectural-fluency" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-architectural-fluency">Part 4: Architectural Fluency</h2>
+<p>Two of the most expensive mistakes in enterprise AI are architectural: spending millions to custom-build what you could have rented, and shipping a clever pipeline that triggers a regulatory breach because no one governed it. Both trace to the same gap - leaders who can’t yet judge <em>how</em> AI is bought, built, and controlled. Closing that gap is architectural fluency, and it is what keeps a steering-committee decision from becoming a write-off.</p>
+<p>Every vendor will insist their delivery model is the only sensible choice. SaaS companies pitch plug-and-play simplicity; cloud giants pitch their ecosystem; custom shops insist a bespoke build is the only way to protect your edge. You do not need to pick a cloud provider or read application code - but you must understand the three strategic paths - <strong>Buy, Extend, Build</strong> - and the governance controls that keep you out of trouble.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strategic path</th>
+<th>What it means</th>
+<th>Speed to value</th>
+<th>Cost structure</th>
+<th>Privacy &amp; control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Buy (SaaS AI)</strong></td>
+<td>Rent pre-built AI apps (e.g., Microsoft Copilot, Salesforce Einstein)</td>
+<td>Fast (days–weeks)</td>
+<td>Predictable per-user subscription (However, now-a-days, you’ll see a hybrid model of fixed fee and token usage fees)</td>
+<td>Lower control; data boundaries set by the vendor’s terms</td>
+</tr>
+<tr class="even">
+<td><strong>2. Extend (Cloud APIs)</strong></td>
+<td>Route your data to a frontier model (e.g., OpenAI, Anthropic, Google) via a cloud API</td>
+<td>Moderate (weeks–months)</td>
+<td>Consumption-based (pay per token)</td>
+<td>Good under an enterprise/API agreement, which typically excludes your data from training</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Build (Custom / open-weights)</strong></td>
+<td>Host an open-weights model (e.g., Meta’s Llama, Mistral) on infrastructure you control</td>
+<td>Slow (months)</td>
+<td>High upfront engineering and ongoing compute</td>
+<td>Highest; data can stay entirely within your perimeter</td>
+</tr>
+</tbody>
+</table>
+<p>Most enterprises end up with a <em>portfolio</em> across all three - buying for commodity tasks, extending for flexible workhorse use cases, and building only where control or differentiation truly justifies it.</p>
+</section>
+<section id="data-isolation-vs.-public-ai---stated-precisely" class="level2">
+<h2 class="anchored" data-anchor-id="data-isolation-vs.-public-ai---stated-precisely">Data isolation vs.&nbsp;public AI - stated precisely</h2>
+<p>Data leakage panics boards, so be precise about the actual risk. The important distinction is <strong>which agreement and settings you are operating under</strong>, not “cloud versus not”:</p>
+<ul>
+<li><strong>Consumer tiers</strong> of public chat tools <em>may</em> use your inputs to improve their models, depending on the provider and your account settings - some let you opt out, some don’t.</li>
+<li><strong>Enterprise and API agreements</strong> from the major providers typically state contractually that your prompts and outputs are <strong>not</strong> used to train their models, and are retained only briefly (or not at all) for abuse-monitoring.</li>
+</ul>
+<p>The executive action is not “ban public tools” but “route corporate data only through agreements you have actually read, and confirm the data-use and retention terms in writing.” Terms differ by vendor and change over time, so verify the current contract rather than relying on reputation.</p>
+</section>
+<section id="the-regulatory-landscape-you-are-now-accountable-for" class="level2">
+<h2 class="anchored" data-anchor-id="the-regulatory-landscape-you-are-now-accountable-for">The regulatory landscape you are now accountable for</h2>
+<p>A gap most technology briefings skip: AI is now <strong>regulated</strong>, and the accountability often sits with the business, not the vendor. You don’t need to be a lawyer, but you should know the landmarks and ask your legal and risk teams where you stand against them.</p>
+<ul>
+<li><strong>Sector rules you already live under</strong> - in financial services, insurance, and healthcare, existing regulators are extending model-risk, fairness, and consumer-protection expectations to AI. Assume your existing obligations apply to AI unless told otherwise.<br>
+<em>A quick web search will give you a few of the most relevant and comprehensive AI regulations/guidelines that already exist.</em></li>
+<li><strong>The EU AI Act</strong> - the first comprehensive, risk-tiered AI law, which bans certain uses outright and imposes strict obligations on “high-risk” systems (which include many uses in credit, insurance, employment, and other regulated decisions). Its obligations phase in over time, so confirm which requirements apply to you and by when.[1]</li>
+<li><strong>The NIST AI Risk Management Framework (AI RMF)</strong> - a voluntary US framework widely used as a practical backbone for governing AI risk.[2]</li>
+<li><strong>ISO/IEC 42001</strong> - the international management-system standard for AI, increasingly requested in enterprise procurement and audits.[3]</li>
+</ul>
+<p><strong>The point:</strong> “The vendor handles compliance” is rarely true for how <em>you</em> deploy a system. Make regulatory mapping a named step in every AI project, not an afterthought.</p>
+</section>
+<section id="the-ai-control-plane-the-harness" class="level2">
+<h2 class="anchored" data-anchor-id="the-ai-control-plane-the-harness">The AI control plane: the “harness”</h2>
+<p>Even with data isolated, autonomous agents and internal RAG stores create a new problem: because they are probabilistic, the same agent can behave differently from one run to the next. To contain that variability, enterprises deploy an <strong>agent harness</strong> - an infrastructure “cage” that defines access boundaries, limits which tools an agent may call, enforces human-approval gates, and produces an audit trail showing exactly why an agent took each action. The harness governs what an agent <em>may</em> do; <strong>observability</strong> tells you what it <em>actually</em> did and how well - continuous monitoring of quality, latency, cost, and usage, with logging and tracing that make every run inspectable. You cannot govern what you cannot see, so treat both as standard infrastructure.</p>
+<p>Picture the controls in this part as a stack wrapped around the model: the model does the work at the core, and each layer constrains, watches, or governs what it can do.</p>
+<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-4/img-p4-1-the-ai-control-plane-the-harness.jpg" class="img-fluid" alt="Diagram: the AI control plane - regulatory map, governance, observability, and agent harness layers wrapped around the model/agent at the core"></p>
+</section>
+<section id="a-new-class-of-risk-ai-specific-security-threats" class="level2">
+<h2 class="anchored" data-anchor-id="a-new-class-of-risk-ai-specific-security-threats">A new class of risk: AI-specific security threats</h2>
+<p>Traditional security assumes software follows fixed instructions. AI systems can be manipulated through their <em>inputs</em>, which introduces threats your existing controls may not catch. At minimum, ask your teams how they defend against:</p>
+<ul>
+<li><strong>Prompt injection</strong> - malicious instructions hidden inside a document, email, or web page that an agent reads, hijacking its behaviour.</li>
+<li><strong>Data poisoning</strong> - corrupting the data a model or RAG index learns from, to skew its outputs.</li>
+<li><strong>Sensitive-data leakage</strong> - an over-permissioned agent surfacing information a user should never have seen.</li>
+</ul>
+<p>These are not reasons to avoid AI; they are reasons to insist on the harness and the governance below.</p>
+</section>
+<section id="the-executive-governance-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="the-executive-governance-checklist">The executive governance checklist</h2>
+<p>If your teams host RAG systems or deploy agents, hold them to a human-centred audit. Do not accept a “black box.” Demand answers to four questions:</p>
+<ol type="1">
+<li><p><strong>Is only what’s needed exposed to the model?</strong><br>
+<em>Risk:</em> An agent can read anything placed in its context. Point it at your whole corporate drive and an HR agent might scrape payroll or an unannounced roadmap.<br>
+<em>Control:</em> Enforce <strong>least-privilege</strong> access at the data-source level. If a human isn’t authorised to see a file, the agent must be blocked from it too.</p></li>
+<li><p><strong>Is personal data properly protected?</strong><br>
+<em>Risk:</em> Passing raw personally identifiable information (PII) into a pipeline risks regulatory breaches.<br>
+<em>Control:</em> Mandate an automated redaction/tokenisation layer that masks sensitive fields <em>before</em> text leaves your internal systems (e.g., “John Doe, SSN 123-45-…” → “[REDACTED_NAME], [REDACTED_ID]”).</p></li>
+<li><p><strong>Is data retention enforced?</strong><br>
+<em>Risk:</em> Vector indexes create long-lived copies of your data. If policy says purge customer records after a set period but they persist in the AI index, you are out of compliance.<br>
+<em>Control:</em> Build automated purging that keeps the AI index synchronised with your deletion schedules.</p></li>
+<li><p><strong>Are we monitoring for bias and behaviour?</strong><br>
+<em>Risk:</em> Trained on historical data, models can inherit historical bias. An unchecked screening or eligibility agent can make unfair, non-compliant decisions at scale.<br>
+<em>Control:</em> Enforce continuous audit trails and run regular, automated fairness checks against agent output logs.</p></li>
+</ol>
+<p><strong>The business impact:</strong> Architectural fluency protects you from two terminal mistakes - spending millions to custom-build what you could have rented, or facing regulatory and reputational damage because a clever pipeline shipped without a governance plane, a compliance map, or defences against AI-specific attacks.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Three paths - <strong>Buy</strong> (SaaS), <strong>Extend</strong> (cloud API), <strong>Build</strong> (open-weights); most enterprises run a <strong>portfolio</strong> of all three.</li>
+<li>Data safety is about the <strong>agreement and settings</strong>, not “cloud vs.&nbsp;not” - enterprise/API terms typically exclude your data from training.</li>
+<li><strong>You</strong> are accountable for regulation - the vendor rarely is.</li>
+<li>Wrap the model in a <strong>control plane</strong>: harness, observability, least-privilege access, PII redaction, bias audits - and defend against prompt injection.</li>
+</ul>
+</section>
+<section id="your-onboarding-status" class="level2">
+<h2 class="anchored" data-anchor-id="your-onboarding-status">Your onboarding status</h2>
+<p>You can now sit with your technology steering committee and read an AI proposal with strategic and compliance clarity. You understand the trade-offs between renting, extending, and building; the regulatory landmarks you’re accountable for; the AI-specific security threats to defend against; and how to hold teams accountable for least-privilege access, data protection, audit trails, and a governance harness.</p>
+<p>You now have the full baseline - the machine, the prompt, the agentic pipeline, and the architectural and regulatory rails. What remains is execution.</p>
+<p>In <strong>Part 5: Leading Enterprise AI Projects</strong>, I attempt to turn all of this into a concrete playbook: a fluency framework for leading AI teams, a way to prioritise and measure value, and a practical approach to the human friction that derails most initiatives.</p>
+<hr>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ol type="1">
+<li><p><span id="ref-1"></span>Regulation (EU) 2024/1689 (the “EU AI Act”), Official Journal of the European Union. <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/" class="uri">https://eur-lex.europa.eu/eli/reg/2024/1689/</a> <em>(Obligations phase in on a staggered timeline.)</em></p></li>
+<li><p><span id="ref-2"></span>National Institute of Standards and Technology (2023). <em>AI Risk Management Framework (AI RMF 1.0).</em> <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" class="uri">https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10</a></p></li>
+<li><p><span id="ref-3"></span>ISO/IEC 42001:2023, <em>Information technology - Artificial intelligence - Management system.</em> <a href="https://www.iso.org/standard/42001" class="uri">https://www.iso.org/standard/42001</a></p></li>
+</ol>
+<p><em>This article is educational and does not constitute legal advice. AI regulation is evolving rapidly and varies by jurisdiction - confirm current obligations with qualified legal and risk professionals.</em></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>Leadership</category>
+  <category>The Executive&#39;s AI Compass</category>
+  <guid>https://vikramggoyal.co/posts/executives-ai-compass-part-4/</guid>
+  <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://vikramggoyal.co/posts/executives-ai-compass-part-4/img-p4-1-the-ai-control-plane-the-harness.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>The Executive’s AI Compass - Part 3: The Dawn of Agentic AI</title>
   <dc:creator>Vikram Goyal</dc:creator>
