@@ -1,63 +1,63 @@
 [
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html",
-    "href": "posts/executives-ai-compass-part-7/index .html",
+    "objectID": "posts/executives-ai-compass-part-7/index.html",
+    "href": "posts/executives-ai-compass-part-7/index.html",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "",
     "text": "September 20, 2026 | Vikram Goyal\n\n\n  \n    Print\n  \n  \n    Download\nViews are my own, not those of my employer or clients. Some specifics (model names, regulations) may date over time.\nIn Part 6 we turned personal fluency into institutional capability - the operating model, the talent mix, and the roles that let an enterprise run AI at scale.\nThe series map:\nNow we go beneath all of it. Every capability in this series - grounding a model in your knowledge, agents that act, predictions you can trust, dashboards that inform decisions - rests on one thing we have referenced at every turn but never fully addressed: your data."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#part-7-the-data-foundation",
-    "href": "posts/executives-ai-compass-part-7/index .html#part-7-the-data-foundation",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#part-7-the-data-foundation",
+    "href": "posts/executives-ai-compass-part-7/index.html#part-7-the-data-foundation",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Part 7: The Data Foundation",
     "text": "Part 7: The Data Foundation\nHere is the uncomfortable truth that vendors rarely lead with: the single biggest predictor of whether your AI programme succeeds is not the model you choose, the consultancy you hire, or the size of your budget. It is the state of your data. A brilliant model on top of fragmented, ungoverned, low-quality data will produce fluent, confident, well-formatted and hallucinated nonsense - faster and at greater scale than you could before.\nStrong AI systems require strong data foundations. This part is about building one."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#why-data-is-the-real-constraint",
-    "href": "posts/executives-ai-compass-part-7/index .html#why-data-is-the-real-constraint",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#why-data-is-the-real-constraint",
+    "href": "posts/executives-ai-compass-part-7/index.html#why-data-is-the-real-constraint",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Why data is the real constraint",
     "text": "Why data is the real constraint\nThink back through the series. Retrieval-augmented generation (Part 3) is only as good as the documents it can retrieve. An agent (Part 3) is only as safe as the access controls on the data it can reach. A predictive model (Part 1) is only as accurate as the history it learned from. Value measurement (Part 5) is impossible without trustworthy baseline data. In every case, the model is the visible part; the data is the load-bearing part.\n\nThis reframes your role. Much of what looks like an “AI problem” is really a data problem wearing an AI wrapper - and it is far cheaper to discover that before you have spent the budget than after."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#assess-your-data-culture-the-five-traps",
-    "href": "posts/executives-ai-compass-part-7/index .html#assess-your-data-culture-the-five-traps",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#assess-your-data-culture-the-five-traps",
+    "href": "posts/executives-ai-compass-part-7/index.html#assess-your-data-culture-the-five-traps",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Assess your data culture: the five traps",
     "text": "Assess your data culture: the five traps\nBefore readiness, look honestly at your organisation’s relationship with data. Five recurring traps quietly sink AI initiatives:\n\n\nQuality. If humans don’t trust a report built on this data, an AI won’t fix that - it will launder the errors into confident prose.\nSilos. The single most common blocker: the data exists, but in a dozen systems that were never designed to be joined.\nIntegration. Even unsiloed data resists use when “customer” means three different things in three systems, with no shared identifier.\nMisuse. Using data for AI beyond the purpose it was collected for is a fast route to a regulatory or trust breach (see Part 4).\nGovernance. When no one owns a dataset, no one is accountable for its quality, its access, or its lifecycle - and everyone assumes someone else is.\n\nAn honest scoring of your organisation against these five is a better predictor of AI success than any technology assessment."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#what-generative-ai-changes-unstructured-data",
-    "href": "posts/executives-ai-compass-part-7/index .html#what-generative-ai-changes-unstructured-data",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#what-generative-ai-changes-unstructured-data",
+    "href": "posts/executives-ai-compass-part-7/index.html#what-generative-ai-changes-unstructured-data",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "What generative AI changes: unstructured data",
     "text": "What generative AI changes: unstructured data\nFor decades, “data strategy” meant structured data - the rows and columns in databases and warehouses that predictive analytics feeds on. But the large majority of enterprise knowledge has always lived in unstructured form: contracts, emails, policies, call transcripts, slide decks, PDFs, images.\nGenerative AI’s breakthrough is that this unstructured material is now usable at scale - which is exactly why RAG matters. The implication for leaders: your data strategy can no longer stop at the warehouse. The messy document estate you have long ignored is now a strategic asset - and, if ungoverned, a strategic liability, because an AI can surface anything in it that isn’t properly access-controlled."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#a-data-readiness-self-assessment",
-    "href": "posts/executives-ai-compass-part-7/index .html#a-data-readiness-self-assessment",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#a-data-readiness-self-assessment",
+    "href": "posts/executives-ai-compass-part-7/index.html#a-data-readiness-self-assessment",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "A data-readiness self-assessment",
     "text": "A data-readiness self-assessment\nBefore funding an AI use case, ask whether the data behind it clears six bars. Score each red / amber / green:\n\nAccessible - can the team actually get to the data, in a usable form, without a six-month integration project?\nQuality - is it complete, current, and accurate enough that a human would trust it?\nOwned - is there a named owner (a data steward) accountable for it?\nUnderstood - do we know its lineage: where it came from and how it’s defined?\nGoverned - are access, retention, and permitted uses defined and enforced?\nPermitted - do we have the rights and consent to use it for this purpose?\n\nA use case sitting on red-scored data is not ready, however compelling the demo. The honest move is to fix the data first, or choose a use case whose data is already green."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#building-a-data-strategy-ai-can-stand-on",
-    "href": "posts/executives-ai-compass-part-7/index .html#building-a-data-strategy-ai-can-stand-on",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#building-a-data-strategy-ai-can-stand-on",
+    "href": "posts/executives-ai-compass-part-7/index.html#building-a-data-strategy-ai-can-stand-on",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Building a data strategy AI can stand on",
     "text": "Building a data strategy AI can stand on\nYou don’t need to personally architect a data platform. You do need to sponsor and hold your teams to a strategy with a few non-negotiables:\n\nSingle sources of truth. Agree where the authoritative version of each key entity lives, so AI (and humans) stop reconciling three conflicting copies.\nOwnership and stewardship. Every important dataset gets a named owner accountable for its quality, access, and lifecycle. Governance is a role, not a document.\nQuality pipelines. Treat data quality as an ongoing, monitored process - not a one-off clean-up that decays the moment it finishes.\nAccess by least privilege. The Part 4 rule, applied at the source: if a person isn’t authorised to see it, the AI must not be able to either.\nLifecycle and retention. Keep AI-facing data in sync with your deletion and retention obligations, so nothing lingers in an index past its lawful life.\nData as a product. The most mature organisations treat well-governed, documented, accessible datasets as internal products with owners and consumers - which is precisely what makes them AI-ready.\n\nWrapped around all of this is the governance, compliance, and ethical frame from Part 4: quality, security, privacy, and permitted use are not separate from your data strategy - they are what makes it trustworthy enough to build on.\nThe business impact: Every hour and capital spent making data accessible, accurate, owned, and governed compounds across every AI use case you will ever run - while every use case built on a shaky foundation quietly borrows against your credibility. Data readiness is the least glamorous and highest-leverage investment - Fund it first."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#key-takeaways",
-    "href": "posts/executives-ai-compass-part-7/index .html#key-takeaways",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#key-takeaways",
+    "href": "posts/executives-ai-compass-part-7/index.html#key-takeaways",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Key takeaways",
     "text": "Key takeaways\n\nThe biggest predictor of AI success is the state of your data, not only the model.\nWatch the five traps: quality, silos, integration, misuse, governance.\nGenerative AI makes unstructured data (documents, email, calls) a strategic asset - and a liability if ungoverned.\nScore data readiness before funding (accessible, quality, owned, understood, governed, permitted) and treat data as a product."
   },
   {
-    "objectID": "posts/executives-ai-compass-part-7/index .html#your-onboarding-status",
-    "href": "posts/executives-ai-compass-part-7/index .html#your-onboarding-status",
+    "objectID": "posts/executives-ai-compass-part-7/index.html#your-onboarding-status",
+    "href": "posts/executives-ai-compass-part-7/index.html#your-onboarding-status",
     "title": "The Executive’s AI Compass - Part 7: The Data Foundation",
     "section": "Your onboarding status",
     "text": "Your onboarding status\nYou can now tell the difference between an AI problem and a data problem wearing an AI wrapper - and you know that the value of everything else in this series is capped by the quality, accessibility, and governance of what sits underneath. You can hold your teams to a data-readiness bar before funding, and sponsor a strategy that makes the foundation stronger with every use case.\nOne frontier remains. So far, across seven parts, AI has been something your organisation uses - a tool that drafts, retrieves, predicts, and automates. But as these systems mature, they begin to do something more unsettling and more powerful: they start to help manage and organise the work itself.\nIn our finale, Part 8: When AI Joins the Management System, I would like to explore algorithmic management, the rise of human-and-machine “superminds,” and how the job of leadership itself changes when AI moves from the toolbox into the management structure.\n\nThis article is educational and does not constitute legal or financial advice. Data governance obligations vary by jurisdiction and sector - confirm specifics with qualified legal and data-protection professionals."
