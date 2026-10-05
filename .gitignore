@@ -12,3 +12,6 @@ __pycache__/
 # Do NOT ignore /_freeze/ — commit it so posts don't re-execute on every build.
 
 **/*.quarto_ipynb
+
+#Ignore Thumbs.db files
+Thumbs.db
