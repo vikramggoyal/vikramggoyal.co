@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,10 +45,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-72aa6392b8fef5f8e1400aba8338a625.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,12 +128,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-links">    
         <li>
-    <a class="dropdown-item" href="../../links/youtube.qmd">
- <span class="dropdown-text">YouTube</span></a>
+    <a class="dropdown-item" href="../../links/reading.html">
+ <span class="dropdown-text">Books and Articles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../links/reading.html">
- <span class="dropdown-text">Reading</span></a>
+    <a class="dropdown-item" href="../../links/videos_podcasts.html">
+ <span class="dropdown-text">Videos and Podcasts</span></a>
   </li>  
     </ul>
   </li>
@@ -269,13 +272,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="why-data-is-the-real-constraint" class="level2">
 <h2 class="anchored" data-anchor-id="why-data-is-the-real-constraint">Why data is the real constraint</h2>
 <p>Think back through the series. Retrieval-augmented generation (Part 3) is only as good as the documents it can retrieve. An agent (Part 3) is only as safe as the access controls on the data it can reach. A predictive model (Part 1) is only as accurate as the history it learned from. Value measurement (Part 5) is impossible without trustworthy baseline data. In every case, the model is the visible part; the data is the load-bearing part.</p>
-<p><img src="img-p7-1-why-data-is-the-real-constraint.jpg" class="img-fluid" alt="Diagram: why data is the real constraint - the visible layer of chatbots &amp; RAG, agents, predictions, and dashboards rests on the load-bearing data foundation: accessible, quality, owned, understood, governed, permitted"></p>
+<p><a href="img-p7-1-why-data-is-the-real-constraint.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img-p7-1-why-data-is-the-real-constraint.jpg" class="img-fluid" alt="Diagram: why data is the real constraint - the visible layer of chatbots &amp; RAG, agents, predictions, and dashboards rests on the load-bearing data foundation: accessible, quality, owned, understood, governed, permitted"></a></p>
 <p>This reframes your role. Much of what looks like an “AI problem” is really a data problem wearing an AI wrapper - and it is far cheaper to discover that before you have spent the budget than after.</p>
 </section>
 <section id="assess-your-data-culture-the-five-traps" class="level2">
 <h2 class="anchored" data-anchor-id="assess-your-data-culture-the-five-traps">Assess your data culture: the five traps</h2>
 <p>Before readiness, look honestly at your organisation’s relationship with data. Five recurring traps quietly sink AI initiatives:</p>
-<p><img src="img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="img-fluid" alt="Diagram: the five data traps - quality, silos, integration, misuse, and governance - each scored red, amber, or green"></p>
+<p><a href="img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="img-fluid" alt="Diagram: the five data traps - quality, silos, integration, misuse, and governance - each scored red, amber, or green"></a></p>
 <ul>
 <li><strong>Quality.</strong> If humans don’t trust a report built on this data, an AI won’t fix that - it will launder the errors into confident prose.</li>
 <li><strong>Silos.</strong> The single most common blocker: the data exists, but in a dozen systems that were never designed to be joined.</li>
@@ -753,6 +756,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

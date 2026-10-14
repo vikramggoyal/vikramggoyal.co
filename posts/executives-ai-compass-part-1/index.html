@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,10 +45,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-72aa6392b8fef5f8e1400aba8338a625.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,12 +128,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-links">    
         <li>
-    <a class="dropdown-item" href="../../links/youtube.qmd">
- <span class="dropdown-text">YouTube</span></a>
+    <a class="dropdown-item" href="../../links/reading.html">
+ <span class="dropdown-text">Books and Articles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../links/reading.html">
- <span class="dropdown-text">Reading</span></a>
+    <a class="dropdown-item" href="../../links/videos_podcasts.html">
+ <span class="dropdown-text">Videos and Podcasts</span></a>
   </li>  
     </ul>
   </li>
@@ -275,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 <p>If you ask a consultant how a Large Language Model (LLM) works, you will likely get a slide deck of academic jargon that could become overwhelming. One thing we do know, AI is not a mystical mind or a sentient being (not yet!). Reframe your mind to view AI for what it is: a hyper-sophisticated prediction engine that, for example, given a stretch of text, <strong>estimates the most probable next fragment</strong> - and does so repeatedly, one fragment at a time.</p>
 <p>A quick but important scoping note: this series concentrates on <strong>generative AI</strong> (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly <strong>multimodal</strong> - the same underlying approach now extends to images, audio, and video - but the mechanics below are the right mental model for the language-based tools most executives will govern first.</p>
 <p>To visualise how data moves through this engine, look at the core interaction loop:</p>
-<p><img src="img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"></p>
+<p><a href="img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"></a></p>
 <p>To sit confidently at the table with your technical partners, you need five foundational concepts.</p>
 <section id="tokens-the-raw-building-blocks" class="level3">
 <h3 class="anchored" data-anchor-id="tokens-the-raw-building-blocks">1. Tokens: the raw building blocks</h3>
@@ -290,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="pre-training-the-digital-neighbourhood-map" class="level3">
 <h3 class="anchored" data-anchor-id="pre-training-the-digital-neighbourhood-map">2. Pre-training: the digital neighbourhood map</h3>
 <p>How does the model “understand” meaning? During <strong>pre-training</strong>, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together - as if grouped into neighbourhoods.</p>
-<p><img src="img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="img-fluid" alt="2. Pre-training: the digital neighbourhood map"></p>
+<p><a href="img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="img-fluid" alt="2. Pre-training: the digital neighbourhood map"></a></p>
 <p>Because <em>cat</em>, <em>tiger</em>, and <em>lion</em> sit close together, the model treats them as related; <em>stock</em> sits far away. When choosing the next token, the model uses this learned geometry to favour words from the relevant region.</p>
 <p><strong>The business impact:</strong> A base model is, in effect, a world-class autocomplete built on public text. It does <strong>not</strong> know your proprietary data, your internal policies, or last week’s events. Expecting a raw model to solve your specific corporate problems out of the box will be like hiring a brilliant graduate and giving them zero onboarding. (In Part 3 and Part 4, I cover how you supply that missing context safely.)</p>
 </section>
@@ -315,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Low temperature:</strong> strict and repeatable - the model favours the safest, most obvious continuations.</li>
 <li><strong>High temperature:</strong> more exploratory and creative - the model is willing to take less likely paths.</li>
 </ul>
-<p><img src="img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></p>
+<p><a href="img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></a></p>
 <p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable - check your AI model provider’s documentation.<a href="#ref-3" class="refmark">[3]</a> The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
 <p><strong>The business impact:</strong> The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic - the same prompt can yield slightly different answers on different runs.</p>
 <hr>
@@ -324,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="a-crucial-distinction-generative-predictive---and-reinforcement-learning" class="level2">
 <h2 class="anchored" data-anchor-id="a-crucial-distinction-generative-predictive---and-reinforcement-learning">A crucial distinction: generative, predictive - and reinforcement learning</h2>
 <p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:<a href="#ref-4" class="refmark">[4]</a> the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> - with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
-<p><img src="img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive - and reinforcement learning"></p>
+<p><a href="img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive - and reinforcement learning"></a></p>
 <ul>
 <li><strong>Generative AI</strong> works with unstructured language, text, and code. It <em>creates</em> new content, and its output is inherently variable. It excels at summarising, drafting, writing code, and orchestrating agentic workflows. It is not a calculator.</li>
 <li><strong>Predictive AI</strong> works with structured tables and statistical history. It <em>estimates a specific quantity or label</em> - a churn probability, a credit-risk score, next month’s demand, a <strong>fraud</strong> flag, or a <strong>predictive-maintenance</strong> warning that a machine is about to fail. Predictive models are <strong>not</strong> simply “deterministic.” They produce calibrated probabilities and can be uncertain; the real distinction is the type of data and the type of output, not certainty versus creativity.</li>
@@ -791,6 +794,38 @@ Matching the engine to the problem is therefore also matching each one’s risk 
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

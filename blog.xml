@@ -9,7 +9,7 @@
 <link>https://vikramggoyal.co/blog.html</link>
 <atom:link href="https://vikramggoyal.co/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Deterministic expectations in a Stochastic life</description>
-<generator>quarto-1.10.18</generator>
+<generator>quarto-1.10.19</generator>
 <lastBuildDate>Sun, 20 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>The Executive’s AI Compass - Part 7: The Data Foundation</title>
@@ -71,13 +71,13 @@
 <section id="why-data-is-the-real-constraint" class="level2">
 <h2 class="anchored" data-anchor-id="why-data-is-the-real-constraint">Why data is the real constraint</h2>
 <p>Think back through the series. Retrieval-augmented generation (Part 3) is only as good as the documents it can retrieve. An agent (Part 3) is only as safe as the access controls on the data it can reach. A predictive model (Part 1) is only as accurate as the history it learned from. Value measurement (Part 5) is impossible without trustworthy baseline data. In every case, the model is the visible part; the data is the load-bearing part.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-7/img-p7-1-why-data-is-the-real-constraint.jpg" class="img-fluid" alt="Diagram: why data is the real constraint - the visible layer of chatbots &amp; RAG, agents, predictions, and dashboards rests on the load-bearing data foundation: accessible, quality, owned, understood, governed, permitted"></p>
+<p><a href="img-p7-1-why-data-is-the-real-constraint.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-7/img-p7-1-why-data-is-the-real-constraint.jpg" class="img-fluid" alt="Diagram: why data is the real constraint - the visible layer of chatbots &amp; RAG, agents, predictions, and dashboards rests on the load-bearing data foundation: accessible, quality, owned, understood, governed, permitted"></a></p>
 <p>This reframes your role. Much of what looks like an “AI problem” is really a data problem wearing an AI wrapper - and it is far cheaper to discover that before you have spent the budget than after.</p>
 </section>
 <section id="assess-your-data-culture-the-five-traps" class="level2">
 <h2 class="anchored" data-anchor-id="assess-your-data-culture-the-five-traps">Assess your data culture: the five traps</h2>
 <p>Before readiness, look honestly at your organisation’s relationship with data. Five recurring traps quietly sink AI initiatives:</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-7/img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="img-fluid" alt="Diagram: the five data traps - quality, silos, integration, misuse, and governance - each scored red, amber, or green"></p>
+<p><a href="img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-7/img-p7-2-before-readiness-look-honestly-at-your-org.jpg" class="img-fluid" alt="Diagram: the five data traps - quality, silos, integration, misuse, and governance - each scored red, amber, or green"></a></p>
 <ul>
 <li><strong>Quality.</strong> If humans don’t trust a report built on this data, an AI won’t fix that - it will launder the errors into confident prose.</li>
 <li><strong>Silos.</strong> The single most common blocker: the data exists, but in a dozen systems that were never designed to be joined.</li>
@@ -211,7 +211,7 @@
 <p>There is no single correct structure - only trade-offs you should choose deliberately rather than inherit by accident.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-1-1-who-owns-ai-three-operating-model-archet.jpg" class="img-fluid figure-img"></p>
+<p><a href="img-p6-1-1-who-owns-ai-three-operating-model-archet.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="1. Who owns AI? Three operating-model archetypes"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-1-1-who-owns-ai-three-operating-model-archet.jpg" class="img-fluid figure-img" alt="1. Who owns AI? Three operating-model archetypes"></a></p>
 <figcaption>1. Who owns AI? Three operating-model archetypes</figcaption>
 </figure>
 </div>
@@ -238,7 +238,7 @@
 <h3 class="anchored" data-anchor-id="a-minimal-cast-of-roles">A minimal cast of roles</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-2-a-minimal-cast-of-roles.jpg" class="img-fluid figure-img"></p>
+<p><a href="img-p6-2-a-minimal-cast-of-roles.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A minimal cast of roles"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-2-a-minimal-cast-of-roles.jpg" class="img-fluid figure-img" alt="A minimal cast of roles"></a></p>
 <figcaption>A minimal cast of roles</figcaption>
 </figure>
 </div>
@@ -264,15 +264,24 @@
 </section>
 <section id="a-maturity-model" class="level2">
 <h2 class="anchored" data-anchor-id="a-maturity-model">A maturity model</h2>
-<p>You don’t need an elaborate framework - but a single-line ladder undersells it. Maturity advances on several dimensions at once, and most organisations are further along on one than another. Read down each column to place yourself honestly:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-3-you-don-t-need-an-elaborate-framework-but-.jpg" class="img-fluid figure-img"></p>
-<figcaption>Diagram: the AI maturity model across four dimensions - use cases, data, governance, and talent</figcaption>
-</figure>
+<p>You don’t need an elaborate framework - but a single-line ladder undersells it. Maturity advances on several dimensions at once, and most organisations are further along on one than another. Read across each row to place yourself honestly: <img src="https://vikramggoyal.co/posts/executives-ai-compass-part-6/img-p6-3-you-don-t-need-an-elaborate-framework-but-.jpg" class="img-fluid" alt="Diagram: the AI maturity model across four dimensions - use cases, data, governance, and talent"></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p>Two lessons fall out of reading it as a grid rather than a line. First, maturity is <strong>uneven</strong>: many organisations run <em>scaling</em>-level use cases on <em>ad hoc</em>-level data - which is precisely why the data foundation in Part 7 matters so much. Second, the rightward move is a <strong>leadership</strong> job, not an IT project. Most organisations reading this series sit between <em>experimenting</em> and <em>scaling</em>; the operating model in this part is what carries them across.</p>
-<p><strong>The final business impact:</strong> Technology is the easy part to buy. The durable advantage is an organisation that can absorb it - one with clear ownership, fluency spread across the workforce, risk built in rather than bolted on, and a structure that turns one team’s breakthrough into everyone’s standard practice. That organisation is something you design, and designing it is the work only leadership can do.</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>How to read this model</strong></p>
+<p>Work across it <strong>row by row</strong>, not column by column. Pick one dimension — say, <strong>Data</strong> — and ask honestly: <em>where do we sit today?</em> If datasets are cleaned per project with no shared ownership, you are in <strong>Experimenting</strong>. If the same data is trusted, governed, and accessible to any use case without a new integration project, you are approaching <strong>Embedded</strong>.</p>
+<p>Do the same for each row. Most organisations will not be in the same column across all four. That unevenness is the point — and your <strong>one highest-leverage gap</strong> (the dimension where moving a single column rightward would unlock the most value) is the right conversation to take to your technology steering committee.</p>
+</div>
+</div>
+<p>Two lessons fall out of reading it as a grid rather than a line. First, maturity is <strong>uneven</strong>: many organisations run <em>scaling</em>-level use cases on <em>ad hoc</em>-level data — which is precisely why the data foundation in Part 7 matters so much. Second, the rightward move is a <strong>leadership</strong> job, not an IT project. Most organisations reading this series sit between <em>experimenting</em> and <em>scaling</em>; the operating model in this part is what carries them across.</p>
+<p><strong>The final business impact:</strong> Technology is the easy part to buy. The durable advantage is an organisation that can absorb it — one with clear ownership, fluency spread across the workforce, risk built in rather than bolted on, and a structure that turns one team’s breakthrough into everyone’s standard practice. That organisation is something you design, and designing it is the work only leadership can do.</p>
 <hr>
 </section>
 <section id="key-takeaways" class="level2">
@@ -374,7 +383,7 @@
 <section id="second-lead-the-work-the-4d-framework-of-ai-fluency" class="level2">
 <h2 class="anchored" data-anchor-id="second-lead-the-work-the-4d-framework-of-ai-fluency">Second, lead the work: the 4D framework of AI fluency</h2>
 <p>To steer AI-augmented teams, a widely adopted model is the <strong>4D Framework of AI Fluency</strong>, developed by Anthropic with Professors Rick Dakan (Ringling College of Art and Design) and Joseph Feller (University College Cork).[3] Its four competencies - <strong>Delegation, Description, Discernment, and Diligence</strong> - describe the skills of working well with AI, of which prompting is only one part.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-5/img-p5-1-second-lead-the-work-the-4d-framework-of-a.jpg" class="img-fluid" alt="Diagram: the 4D Framework of AI Fluency - Delegation, Description, Discernment, Diligence - developed by Anthropic with R. Dakan (Ringling) and J. Feller (UCC)"></p>
+<p><a href="img-p5-1-second-lead-the-work-the-4d-framework-of-a.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-5/img-p5-1-second-lead-the-work-the-4d-framework-of-a.jpg" class="img-fluid" alt="Diagram: the 4D Framework of AI Fluency - Delegation, Description, Discernment, Diligence - developed by Anthropic with R. Dakan (Ringling) and J. Feller (UCC)"></a></p>
 <ul>
 <li><strong>Delegation.</strong> Leading with AI begins with deciding what to hand over to the AI and what to keep with humans. AI excels at high-volume, text-dense work, extraction, and rapid drafting. You cannot delegate ultimate accountability, core strategy, or human empathy. Fluency starts by separating machine labour from human judgment.</li>
 <li><strong>Description.</strong> Because these are probabilistic systems, you program them with clear language, as we explored with prompting in Part 2 - persona, context, constraints, and output format. This is where prompting lives; note that it is <em>one quarter of one</em> competency, not the whole game.[3]</li>
@@ -388,7 +397,7 @@
 <section id="turning-the-4ds-into-a-culture-exploration-quotient-eq" class="level2">
 <h2 class="anchored" data-anchor-id="turning-the-4ds-into-a-culture-exploration-quotient-eq">Turning the 4Ds into a culture: Exploration Quotient (EQ)</h2>
 <p>MIT Sloan in its <em>AI Essentials</em> programme frames a related idea: helping leaders raise the <strong>Exploration Quotient (EQ)</strong> of their teams - their capacity to run structured experiments and adopt AI, rather than merely use a tool once.[1] The implementation methodology for development will need a renewed outlook where a feature failure is reviewed, reiterated with incremental changes until the outcome is reached.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-5/img-p5-2-turning-the-4ds-into-a-culture-exploration.jpg" class="img-fluid" alt="Diagram: raising your team's Exploration Quotient - applying the 4Ds shifts a legacy culture from low EQ (fixed checklists, punished mistakes, pilots that never reach production) to high EQ (safe sandboxes, rapid iteration, shared templates, workforce expanded not displaced)"></p>
+<p><a href="img-p5-2-turning-the-4ds-into-a-culture-exploration.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-5/img-p5-2-turning-the-4ds-into-a-culture-exploration.jpg" class="img-fluid" alt="Diagram: raising your team's Exploration Quotient - applying the 4Ds shifts a legacy culture from low EQ (fixed checklists, punished mistakes, pilots that never reach production) to high EQ (safe sandboxes, rapid iteration, shared templates, workforce expanded not displaced)"></a></p>
 <p>Here is how to use the 4Ds to raise EQ:</p>
 <ol type="1">
 <li><strong>De-risk with sandbox delegation.</strong> Stand up isolated, internal spaces and say plainly: <em>“Mistakes in the sandbox are data, not failures.”</em> Psychological safety is what lets teams explore where the model fits.</li>
@@ -589,7 +598,7 @@
 <h2 class="anchored" data-anchor-id="the-ai-control-plane-the-harness">The AI control plane: the “harness”</h2>
 <p>Even with data isolated, autonomous agents and internal RAG stores create a new problem: because they are probabilistic, the same agent can behave differently from one run to the next. To contain that variability, enterprises deploy an <strong>agent harness</strong> - an infrastructure “cage” that defines access boundaries, limits which tools an agent may call, enforces human-approval gates, and produces an audit trail showing exactly why an agent took each action. The harness governs what an agent <em>may</em> do; <strong>observability</strong> tells you what it <em>actually</em> did and how well - continuous monitoring of quality, latency, cost, and usage, with logging and tracing that make every run inspectable. You cannot govern what you cannot see, so treat both as standard infrastructure.</p>
 <p>Picture the controls in this part as a stack wrapped around the model: the model does the work at the core, and each layer constrains, watches, or governs what it can do.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-4/img-p4-1-the-ai-control-plane-the-harness.jpg" class="img-fluid" alt="Diagram: the AI control plane - regulatory map, governance, observability, and agent harness layers wrapped around the model/agent at the core"></p>
+<p><a href="img-p4-1-the-ai-control-plane-the-harness.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-4/img-p4-1-the-ai-control-plane-the-harness.jpg" class="img-fluid" alt="Diagram: the AI control plane - regulatory map, governance, observability, and agent harness layers wrapped around the model/agent at the core"></a></p>
 </section>
 <section id="a-new-class-of-risk-ai-specific-security-threats" class="level2">
 <h2 class="anchored" data-anchor-id="a-new-class-of-risk-ai-specific-security-threats">A new class of risk: AI-specific security threats</h2>
@@ -721,7 +730,7 @@
 <p>The canonical pipeline has four steps:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-1-the-canonical-pipeline-has-four-steps.jpg" class="img-fluid figure-img"></p>
+<p><a href="img-p3-1-the-canonical-pipeline-has-four-steps.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The canonical pipeline has four steps"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-1-the-canonical-pipeline-has-four-steps.jpg" class="img-fluid figure-img" alt="The canonical pipeline has four steps"></a></p>
 <figcaption>The canonical pipeline has four steps</figcaption>
 </figure>
 </div>
@@ -742,7 +751,7 @@
 <p>In a mature setup you don’t deploy a lone agent; you build a framework coordinated by an <strong>orchestrator</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg" class="img-fluid figure-img"></p>
+<p><a href="img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="1. Multi-agent orchestration (the digital manager)"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-3/img-p3-2-1-multi-agent-orchestration-the-digital-ma.jpg" class="img-fluid figure-img" alt="1. Multi-agent orchestration (the digital manager)"></a></p>
 <figcaption>1. Multi-agent orchestration (the digital manager)</figcaption>
 </figure>
 </div>
@@ -860,7 +869,7 @@
 <p>A vague prompt like <em>“Write a status report”</em> leaves an enormous field of plausible continuations (probabilities), producing something generic. Structured boundaries narrow that field to a precise, professional target.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg" class="img-fluid figure-img"></p>
+<p><a href="img-p2-1-how-a-prompt-works-mechanically.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="How a prompt works, mechanically"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-2/img-p2-1-how-a-prompt-works-mechanically.jpg" class="img-fluid figure-img" alt="How a prompt works, mechanically"></a></p>
 <figcaption>How a prompt works, mechanically</figcaption>
 </figure>
 </div>
@@ -1226,7 +1235,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <p>If you ask a consultant how a Large Language Model (LLM) works, you will likely get a slide deck of academic jargon that could become overwhelming. One thing we do know, AI is not a mystical mind or a sentient being (not yet!). Reframe your mind to view AI for what it is: a hyper-sophisticated prediction engine that, for example, given a stretch of text, <strong>estimates the most probable next fragment</strong> - and does so repeatedly, one fragment at a time.</p>
 <p>A quick but important scoping note: this series concentrates on <strong>generative AI</strong> (the LLMs behind tools like ChatGPT, Claude, and Copilot). Modern systems are increasingly <strong>multimodal</strong> - the same underlying approach now extends to images, audio, and video - but the mechanics below are the right mental model for the language-based tools most executives will govern first.</p>
 <p>To visualise how data moves through this engine, look at the core interaction loop:</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"></p>
+<p><a href="img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-1-to-visualise-how-data-moves-through-this-e.jpg" class="img-fluid" alt="Diagram: the LLM interaction loop - query in, model predicts the next fragment, response added to the context window"></a></p>
 <p>To sit confidently at the table with your technical partners, you need five foundational concepts.</p>
 <section id="tokens-the-raw-building-blocks" class="level3">
 <h3 class="anchored" data-anchor-id="tokens-the-raw-building-blocks">1. Tokens: the raw building blocks</h3>
@@ -1241,7 +1250,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <section id="pre-training-the-digital-neighbourhood-map" class="level3">
 <h3 class="anchored" data-anchor-id="pre-training-the-digital-neighbourhood-map">2. Pre-training: the digital neighbourhood map</h3>
 <p>How does the model “understand” meaning? During <strong>pre-training</strong>, it reads an enormous volume of text provided to it and learns to represent each token as a set of coordinates in a high-dimensional vector space. Words that appear in similar contexts end up close together - as if grouped into neighbourhoods.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="img-fluid" alt="2. Pre-training: the digital neighbourhood map"></p>
+<p><a href="img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-2-2-pre-training-the-digital-neighbourhood-m.jpg" class="img-fluid" alt="2. Pre-training: the digital neighbourhood map"></a></p>
 <p>Because <em>cat</em>, <em>tiger</em>, and <em>lion</em> sit close together, the model treats them as related; <em>stock</em> sits far away. When choosing the next token, the model uses this learned geometry to favour words from the relevant region.</p>
 <p><strong>The business impact:</strong> A base model is, in effect, a world-class autocomplete built on public text. It does <strong>not</strong> know your proprietary data, your internal policies, or last week’s events. Expecting a raw model to solve your specific corporate problems out of the box will be like hiring a brilliant graduate and giving them zero onboarding. (In Part 3 and Part 4, I cover how you supply that missing context safely.)</p>
 </section>
@@ -1266,7 +1275,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <li><strong>Low temperature:</strong> strict and repeatable - the model favours the safest, most obvious continuations.</li>
 <li><strong>High temperature:</strong> more exploratory and creative - the model is willing to take less likely paths.</li>
 </ul>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></p>
+<p><a href="img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-3-5-temperature-dialling-creativity-vs-predi.jpg" class="img-fluid" alt="Diagram: the temperature scale from deterministic and strict to creative and unpredictable"></a></p>
 <p><em>A note on the numbers: some platforms scale temperature from 0 to 1, others from 0 to 2, so the exact figure isn’t portable - check your AI model provider’s documentation.[3] The principle holds everywhere. Some newer models do not allow the temperature to be changed and may give errors.</em></p>
 <p><strong>The business impact:</strong> The wrong setting quietly breaks deployments. A high temperature on a finance task invites invented figures; a temperature of zero on marketing copy produces something mechanical. Even at low temperatures, remember that most generative models are not fully deterministic - the same prompt can yield slightly different answers on different runs.</p>
 <hr>
@@ -1275,7 +1284,7 @@ font-style: inherit;">system_prompt</span>&gt;</span></code></pre></div></div>
 <section id="a-crucial-distinction-generative-predictive---and-reinforcement-learning" class="level2">
 <h2 class="anchored" data-anchor-id="a-crucial-distinction-generative-predictive---and-reinforcement-learning">A crucial distinction: generative, predictive - and reinforcement learning</h2>
 <p>Before moving on, master one line that MIT Sloan Management Review calls a matter of “matching the technology to the specific business problem”:[4] the difference between <strong>generative AI</strong> and <strong>predictive AI</strong> - with a third family, <strong>reinforcement learning</strong>, worth recognising to complete the picture.</p>
-<p><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive - and reinforcement learning"></p>
+<p><a href="img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://vikramggoyal.co/posts/executives-ai-compass-part-1/img-p1-4-a-crucial-distinction-generative-predictiv.jpg" class="img-fluid" alt="A crucial distinction: generative, predictive - and reinforcement learning"></a></p>
 <ul>
 <li><strong>Generative AI</strong> works with unstructured language, text, and code. It <em>creates</em> new content, and its output is inherently variable. It excels at summarising, drafting, writing code, and orchestrating agentic workflows. It is not a calculator.</li>
 <li><strong>Predictive AI</strong> works with structured tables and statistical history. It <em>estimates a specific quantity or label</em> - a churn probability, a credit-risk score, next month’s demand, a <strong>fraud</strong> flag, or a <strong>predictive-maintenance</strong> warning that a machine is about to fail. Predictive models are <strong>not</strong> simply “deterministic.” They produce calibrated probabilities and can be uncertain; the real distinction is the type of data and the type of output, not certainty versus creativity.</li>

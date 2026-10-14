@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Some recent books and articles that I’ve read and found insightful.">
+<meta name="description" content="Some recent books and articles that I’ve read and found interesting.">
 
-<title>Reading – Vikram G Goyal</title>
+<title>Books and Articles – Vikram G Goyal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-72aa6392b8fef5f8e1400aba8338a625.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -78,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles/print.css">
-<meta property="og:title" content="Reading – Vikram G Goyal">
-<meta property="og:description" content="Some recent books and articles that I’ve read and found insightful.">
+<meta property="og:title" content="Books and Articles – Vikram G Goyal">
+<meta property="og:description" content="Some recent books and articles that I’ve read and found interesting.">
 <meta property="og:site_name" content="Vikram G Goyal">
-<meta name="twitter:title" content="Reading – Vikram G Goyal">
-<meta name="twitter:description" content="Some recent books and articles that I’ve read and found insightful.">
+<meta name="twitter:title" content="Books and Articles – Vikram G Goyal">
+<meta name="twitter:description" content="Some recent books and articles that I’ve read and found interesting.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -121,12 +121,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-links">    
         <li>
-    <a class="dropdown-item" href="../links/youtube.qmd">
- <span class="dropdown-text">YouTube</span></a>
+    <a class="dropdown-item" href="../links/reading.html">
+ <span class="dropdown-text">Books and Articles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../links/reading.html">
- <span class="dropdown-text">Reading</span></a>
+    <a class="dropdown-item" href="../links/videos_podcasts.html">
+ <span class="dropdown-text">Videos and Podcasts</span></a>
   </li>  
     </ul>
   </li>
@@ -168,12 +168,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reading</h1>
+<h1 class="title">Books and Articles</h1>
 </div>
 
 <div>
   <div class="description">
-    Some recent books and articles that I’ve read and found insightful.
+    Some recent books and articles that I’ve read and found interesting.
   </div>
 </div>
 
@@ -190,16 +190,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="books" class="level3">
-<h3 class="anchored" data-anchor-id="books">Books</h3>
+<section id="books" class="level2">
+<h2 class="anchored" data-anchor-id="books">Books</h2>
 <ul>
-<li><a href="https://dataintensive.net"><strong>Designing Data-Intensive Applications</strong> — Martin Kleppmann</a> The reference for how storage, replication, and consistency actually behave. <em>(Placeholder — replace.)</em></li>
+<li><p><a href="https://www.goodreads.com/en/book/show/25135194-prisoners-of-geography"><strong>Prisoners of Geography: Ten Maps That Tell You Everything You Need to Know About Global Politics</strong></a> — Tim Marshall</p></li>
+<li><p><a href="https://www.fepress.org/primer-second-ed/"><strong>A Primer for the Mathematics of Financial Engineering</strong></a> — Dan Stefanica</p></li>
+<li><p><a href="https://www.goodreads.com/en/book/show/60768727-hbr-at-100"><strong>HBR At 100: The Most Influential and Innovative Articles from Harvard Business Review’s First Century</strong></a> — Harvard Business Review</p></li>
 </ul>
 </section>
-<section id="articles" class="level3">
-<h3 class="anchored" data-anchor-id="articles">Articles</h3>
+<section id="articles" class="level2">
+<h2 class="anchored" data-anchor-id="articles">Articles</h2>
 <ul>
-<li><a href="https://web.stanford.edu/~ouster/cgi-bin/book.php"><strong>A Philosophy of Software Design (talk notes)</strong></a> On deep modules and pushing complexity downward. <em>(Placeholder — replace.)</em></li>
+<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7152239"><strong>Private Credit’s State Backstop: How Private Equity Socializes Risk Through Insurers</strong></a></li>
 </ul>
 
 
@@ -293,6 +295,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
