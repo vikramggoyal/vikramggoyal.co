@@ -1,16 +1,19 @@
 ---
-title: "Reading"
-description: "Some recent books and articles that I've read and found insightful."
+title: "Books and Articles"
+description: "Some recent books and articles that I've read and found interesting."
+format:
+  html:
+    link-external-newwindow: true
 ---
 
-### Books
+## Books
 
-- [**Designing Data-Intensive Applications** — Martin Kleppmann](https://dataintensive.net)
-  The reference for how storage, replication, and consistency actually behave.
-  *(Placeholder — replace.)*
+- [**Prisoners of Geography: Ten Maps That Tell You Everything You Need to Know About Global Politics**](https://www.goodreads.com/en/book/show/25135194-prisoners-of-geography) — Tim Marshall
 
-### Articles
+- [**A Primer for the Mathematics of Financial Engineering**](https://www.fepress.org/primer-second-ed/) — Dan Stefanica
 
-- [**A Philosophy of Software Design (talk notes)**](https://web.stanford.edu/~ouster/cgi-bin/book.php)
-  On deep modules and pushing complexity downward.
-  *(Placeholder — replace.)*
+- [**HBR At 100: The Most Influential and Innovative Articles from Harvard Business Review's First Century**](https://www.goodreads.com/en/book/show/60768727-hbr-at-100) — Harvard Business Review
+
+## Articles
+
+- [**Private Credit's State Backstop: How Private Equity Socializes Risk Through Insurers**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7152239)

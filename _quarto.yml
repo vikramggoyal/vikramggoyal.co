@@ -25,10 +25,10 @@ website:
         text: About
       - text: Links
         menu:
-          - href: links/youtube.qmd
-            text: YouTube
           - href: links/reading.qmd
-            text: Reading
+            text: Books and Articles
+          - href: links/videos_podcasts.qmd
+            text: Videos and Podcasts
     right:
       - icon: github
         href: https://github.com/vikramggoyal
@@ -49,3 +49,7 @@ format:
     code-copy: true
     code-overflow: wrap
     smooth-scroll: true
+
+filters:
+  - lightbox
+lightbox: auto

@@ -1,0 +1,15 @@
+---
+title: "Videos and Podcasts"
+description: "Some recent videos and podcasts that I've viewed or heard and found interesting."
+format:
+  html:
+    link-external-newwindow: true
+---
+
+## Podcasts
+
+- **Why Too Much Efficiency Makes Us Fragile with Olivier Hamant**
+  [YouTube](https://www.youtube.com/watch?v=Kzzr15cEg3o) · [Spotify](https://open.spotify.com/episode/7rKAJRQfrV0nXBEm22XSzf?si=f67d22450a074bbf)
+
+- **Humanity's Icarus Moment: The Wings, the sea, and the Sun of AI**
+  [YouTube](https://www.youtube.com/watch?v=6yBYrmy0VW0) · [Spotify](https://open.spotify.com/episode/2GaAZ6e47UBsO3k7mZAmrs?si=50f2fb3795894c0a)

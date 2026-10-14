@@ -21,7 +21,12 @@ Posts, most with runnable or interactive Python.
 
 ::: {.g-col-12 .g-col-md-4}
 ### [Links →](links/reading.qmd)
-Reading and videos worth your time.
+Reading worth your time.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### [Links →](links/videos_podcasts.qmd)
+Videos and podcasts worth your time..
 :::
 
 ::: {.g-col-12 .g-col-md-4}

@@ -90,13 +90,21 @@ Consultants and vendors can accelerate your implementations enormously. The righ
 
 ## A maturity model
 
-You don't need an elaborate framework - but a single-line ladder undersells it. Maturity advances on several dimensions at once, and most organisations are further along on one than another. Read down each column to place yourself honestly:
-
+You don't need an elaborate framework - but a single-line ladder undersells it. Maturity advances on several dimensions at once, and most organisations are further along on one than another. Read across each row to place yourself honestly:
 ![Diagram: the AI maturity model across four dimensions - use cases, data, governance, and talent](img-p6-3-you-don-t-need-an-elaborate-framework-but-.jpg)
 
-Two lessons fall out of reading it as a grid rather than a line. First, maturity is **uneven**: many organisations run *scaling*-level use cases on *ad hoc*-level data - which is precisely why the data foundation in Part 7 matters so much. Second, the rightward move is a **leadership** job, not an IT project. Most organisations reading this series sit between *experimenting* and *scaling*; the operating model in this part is what carries them across.
+::: {.callout-note icon=false}
 
-**The final business impact:** Technology is the easy part to buy. The durable advantage is an organisation that can absorb it - one with clear ownership, fluency spread across the workforce, risk built in rather than bolted on, and a structure that turns one team's breakthrough into everyone's standard practice. That organisation is something you design, and designing it is the work only leadership can do.
+**How to read this model**
+
+Work across it **row by row**, not column by column. Pick one dimension — say, **Data** — and ask honestly: *where do we sit today?* If datasets are cleaned per project with no shared ownership, you are in **Experimenting**. If the same data is trusted, governed, and accessible to any use case without a new integration project, you are approaching **Embedded**.
+
+Do the same for each row. Most organisations will not be in the same column across all four. That unevenness is the point — and your **one highest-leverage gap** (the dimension where moving a single column rightward would unlock the most value) is the right conversation to take to your technology steering committee.
+:::
+
+Two lessons fall out of reading it as a grid rather than a line. First, maturity is **uneven**: many organisations run *scaling*-level use cases on *ad hoc*-level data — which is precisely why the data foundation in Part 7 matters so much. Second, the rightward move is a **leadership** job, not an IT project. Most organisations reading this series sit between *experimenting* and *scaling*; the operating model in this part is what carries them across.
+
+**The final business impact:** Technology is the easy part to buy. The durable advantage is an organisation that can absorb it — one with clear ownership, fluency spread across the workforce, risk built in rather than bolted on, and a structure that turns one team's breakthrough into everyone's standard practice. That organisation is something you design, and designing it is the work only leadership can do.
 
 ---
 
